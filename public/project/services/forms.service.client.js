@@ -2,7 +2,7 @@
 
 (function () {
     angular
-        .module("FormBuilderApp")
+        .module("NewsApp")
         .factory("FormService", FormService);
 
     function FormService (){
