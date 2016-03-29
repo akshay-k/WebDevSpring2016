@@ -9,7 +9,7 @@
                             <label for="Username" class="col-sm-2 control-label">Username:</label>
                         </td>
                         <td width="283">
-                            <input ng-model="currentuser.username" type="text" name="Username" id="Username" class="form-control" placeholder="Username">
+                            <input ng-model="currentUser.username" type="text" name="Username" id="Username" class="form-control" placeholder="Username">
                         </td>
                     </tr>
                     <tr>
@@ -21,7 +21,7 @@
                             <label for="Password" class="col-sm-2 control-label">Password:</label>
                         </td>
                         <td>
-                            <input ng-model="currentuser.password" type="password" name="Password" id="Password" class="form-control" placeholder="Password">
+                            <input ng-model="currentUser.password" type="password" name="Password" id="Password" class="form-control" placeholder="Password">
                         </td>
                     </tr>
                     <tr>
@@ -33,7 +33,7 @@
                             <label for="Verfiy Password" class="col-sm-2 control-label">Verify Password:</label>
                         </td>
                         <td>
-                            <input ng-model="currentuser.verifypassword" type="password" name="Verify Password" id="Verfiy Password" class="form-control" placeholder="Verify Password">
+                            <input ng-model="currentUser.verifypassword" type="password" name="Verify Password" id="Verfiy Password" class="form-control" placeholder="Verify Password">
                         </td>
                     </tr>
                     <tr>
@@ -45,7 +45,7 @@
                             <label for="Email" class="col-sm-2 control-label">Email:</label>
                         </td>
                         <td>
-                            <input ng-model="currentuser.email" type="email" name="email" id="Email" class="form-control" placeholder="Email">
+                            <input ng-model="currentUser.email" type="email" name="email" id="Email" class="form-control" placeholder="Email">
                         </td>
                     </tr>
                     <tr>
@@ -55,7 +55,7 @@
                     <tr>
                         <td>&nbsp;</td>
                         <td>
-                            <input ng-click="createUser()" type="submit" class="btn btn-success" value="Register"/>
+                            <input ng-click="model.createUser(currentUser)" type="submit" class="btn btn-success" value="Register"/>
                         </td>
                     </tr>
                 </table>

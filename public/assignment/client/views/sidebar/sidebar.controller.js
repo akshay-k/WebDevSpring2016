@@ -5,9 +5,17 @@
         .module("FormBuilderApp")
         .controller("SidebarController", SidebarController);
 
-    function SidebarController($scope, $rootScope, $location, UserService) {
-        $scope.currentUser = $rootScope.user;
-        $scope.isAdmin = $rootScope.user != null && $rootScope.user.roles.indexOf('admin')>-1;
+    function SidebarController($location) {
+
+        var vm = this;
+
+        function init(){
+            vm.$location = $location;
+        }
+        init();
+
+        //$scope.currentUser = $rootScope.user;
+        //$scope.isAdmin = $rootScope.user != null && $rootScope.user.roles.indexOf('admin')>-1;
 
         //$rootScope.$watch("user", function(){
         //    $scope.currentUser = $rootScope.user;

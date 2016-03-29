@@ -7,12 +7,12 @@
 
             <ul class="nav nav-tabs">
                 <li role="presentation"
-                    ng-class="{active: $location.url()=='/forms', disabled: $location.url()=='/forms'}">
+                    ng-class="{active: model.$location.url()=='/forms', disabled: model.$location.url()=='/forms'}">
                     <a href="#/forms">Forms</a>
                 </li>
                 <li role="presentation"
-                    ng-class="{active: $location.url()=='/forms-fields', disabled: $location.url()=='/forms-fields'}">
-                    <a href="#/forms-fields">Fields</a>
+                    ng-class="{active: model.$location.url()=='/fields', disabled: model.$location.url()=='/fields'}">
+                    <a href="#/fields">Fields</a>
                 </li>
             </ul>
             <div class="panel-body">
@@ -20,9 +20,9 @@
                     <thead>
                     <tr>
                         <th>
-                            <a ng-click="reverseSort = !reverseSort">
-                                <span ng-show="!reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
-                                <span ng-show="reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+                            <a ng-click="model.reverseSort = !model.reverseSort">
+                                <span ng-show="!model.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
+                                <span ng-show="model.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
                                 &nbsp;
                                 Form Name
                             </a>
@@ -33,29 +33,31 @@
                     <tbody>
                     <tr>
                         <td height="34">
-                            <input ng-model="select.title" type="text" name="name" id="name" placeholder="name">
+                            <input ng-model="model.select.title" type="text" name="name" id="name" placeholder="name">
                         </td>
                         <td>
                             &nbsp;
-                            <a ng-click="addForm(select); loadForms()">
+                            <a ng-click="model.addForm(model.select)">
                                 <span class="glyphicon glyphicon-plus"></span>
                             </a>
-                            <a ng-click="updateForm(select); loadForms()">
+                            <a ng-click="model.updateForm(model.select)">
                                 <span class="glyphicon glyphicon-ok"></span>
                             </a>
                         </td>
                     </tr>
-                    <tr ng-repeat="form in Forms | orderBy:sortType:reverseSort">
+                    <tr ng-repeat="form in model.allForms | orderBy:model.sortType:model.reverseSort">
                         <td height="37">
                             &nbsp;
-                            {{form.title}}
+                            <a href="#/form/{{form._id}}/fields">
+                                {{form.title}}
+                            </a>
                         </td>
                         <td>
                             &nbsp;
-                            <a ng-click="deleteForm(form._id); loaddForms()">
+                            <a ng-click="model.deleteForm(form._id)">
                                 <span class="glyphicon glyphicon-remove"></span>
                             </a>
-                            <a ng-click="selectForm(form)">
+                            <a ng-click="model.selectForm(form)">
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </a>
                         </td>
