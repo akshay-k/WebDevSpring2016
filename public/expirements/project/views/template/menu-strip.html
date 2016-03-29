@@ -1,0 +1,22 @@
+<div class="menu-strip">
+    <ul>
+        <li><a href="#/worldnews">World News</a></li>
+        <li><a href="#/sports">Sports</a></li>
+        <li><a href="#/tech">Tech</a></li>
+        <li><a href="#/business">Business</a></li>
+        <li><a href="#/movies">Movies</a></li>
+        <li><a href="#/entertainment">Entertainment</a></li>
+        <li><a href="#/books">Books</a></li>
+        <li><a href="#/culture">Culture</a></li>
+        <li><a href="#/classifieds">Classifieds</a></li>
+        <li><a href="#/blogs">Blogs</a></li>
+    </ul>
+</div>
+<!-- script for menu -->
+<script>
+    $( "span.menu" ).click(function() {
+        $( ".menu-strip" ).slideToggle( "slow", function() {
+            // Animation complete.
+        });
+    });
+</script>

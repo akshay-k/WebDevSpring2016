@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class="panel">
+        <!--<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">-->
+            <h1 class="page-header">Forms</h1>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+
+            <ul class="nav nav-tabs">
+                <li role="presentation"
+                    ng-class="{active: $location.url()=='/forms', disabled: $location.url()=='/forms'}">
+                    <a href="#/forms">Forms</a>
+                </li>
+                <li role="presentation"
+                    ng-class="{active: $location.url()=='/forms-fields', disabled: $location.url()=='/forms-fields'}">
+                    <a href="#/forms-fields">Fields</a>
+                </li>
+            </ul>
+            <div class="panel-body">
+                <table width="79%" border="1" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>
+                            <a ng-click="reverseSort = !reverseSort">
+                                <span ng-show="!reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
+                                <span ng-show="reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+                                &nbsp;
+                                Form Name
+                            </a>
+                        </th>
+                        <th width="168">&nbsp;Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td height="34">
+                            <input ng-model="select.title" type="text" name="name" id="name" placeholder="name">
+                        </td>
+                        <td>
+                            &nbsp;
+                            <a ng-click="addForm(select); loadForms()">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </a>
+                            <a ng-click="updateForm(select); loadForms()">
+                                <span class="glyphicon glyphicon-ok"></span>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr ng-repeat="form in Forms | orderBy:sortType:reverseSort">
+                        <td height="37">
+                            &nbsp;
+                            {{form.title}}
+                        </td>
+                        <td>
+                            &nbsp;
+                            <a ng-click="deleteForm(form._id); loaddForms()">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                            <a ng-click="selectForm(form)">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <p>&nbsp;</p>
+                <div class="row placeholders"></div>
+            </div>
+        <!--</div>-->
+    </div>
+</div>

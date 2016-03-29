@@ -1,0 +1,161 @@
+<div class="container-fluid">
+    <div class="row">
+        <!--<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">-->
+        <h1 class="page-header">Forms : Registration Forms</h1>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <table width="218">
+            <tr>
+                <ul class="nav nav-tabs">
+                    <li role="presentation"
+                        ng-class="{active: $location.url()=='/forms', disabled: $location.url()=='/forms'}">
+                        <a href="#/forms">Forms</a>
+                    </li>
+                    <li role="presentation"
+                        ng-class="{active: $location.url()=='/forms-fields', disabled: $location.url()=='/forms-fields'}">
+                        <a href="#/forms-fields">Fields</a>
+                    </li>
+                </ul>
+            </tr>
+
+        </table>
+        <p>&nbsp;</p>
+        <table width="79%" border="1" class="table table-striped">
+            <tr>
+                <td width="479" height="34">
+                    <p>First Name:</p>
+                    <p>
+                        <label for="First Name"></label>
+                        <input type="text" name="First Name" id="First Name" placeholder="First Name">
+                    </p>
+                </td>
+                <td width="168">
+                    &nbsp;<span class="glyphicon glyphicon-pencil"></span>
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                </td>
+            </tr>
+            <tr>
+                <td height="37">
+                    <p>Last Name:</p>
+                    <p>
+                        <label for="Last Name"></label>
+                        <input type="text" name="Last Name" id="Last Name" placeholder="Last Name">
+                    </p>
+                </td>
+                <td>
+                    &nbsp;<span class="glyphicon glyphicon-pencil"></span>
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                </td>
+            </tr>
+            <tr>
+                <td height="38">
+                    <p>Date of Birth:</p>
+                    <p>
+                        <label for="Date of Birth"></label>
+                        <input type="date" name="Date of Birth" id="Date of Birth" placeholder="Select Date">
+                        </input>
+                    </p>
+                </td>
+                <td>
+                    &nbsp;<span class="glyphicon glyphicon-pencil"></span>
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                </td>
+            </tr>
+            <tr>
+                <td height="38">
+                    <p>Gender:</p>
+                    <p>
+                        <label for="Gender"></label>
+                        <select name="Gender" id="Gender">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </p>
+                </td>
+                <td align="">
+                    &nbsp;<span class="glyphicon glyphicon-pencil"></span>
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                </td>
+            </tr>
+            <tr>
+                <td height="38">
+                    <p>Roles:</p>
+                    <p>
+                        <label>
+                            <input type="checkbox" name="Roles" value="Admin" id="Roles_0">
+                            Admin
+                        </label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="Roles" value="Student" id="Roles_1">
+                            Student
+                        </label>
+                        <br>
+                        <label>
+                            <input type="checkbox" name="Roles" value="User" id="Roles_2">
+                            User
+                        </label>
+                        <br>
+                    </p>
+                </td>
+                <td align="">
+                    &nbsp;<span class="glyphicon glyphicon-pencil"></span>
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                </td>
+            </tr>
+            <tr>
+                <td height="38">
+                    <p>License Agreement:</p>
+                    <p>
+                        <label>
+                            <input type="radio" name="License Agreement" value="Yes" id="LicenseAgreement_0" checked="true">
+                            Yes
+                        </label>
+                        <br>
+                        <label>
+                            <input type="radio" name="License Agreement" value="No" id="LicenseAgreement_1">
+                            No
+                        </label>
+                        <br>
+                    </p>
+                </td>
+                <td align="">
+                    &nbsp;<span class="glyphicon glyphicon-pencil"></span>
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="glyphicon glyphicon-remove"></span>
+                    <span class="glyphicon glyphicon-align-justify"></span>
+                </td>
+            </tr>
+            <tr>
+                <td height="20">&nbsp;</td>
+                <td align="">&nbsp;</td>
+            </tr>
+            <tr>
+                <td height="38">
+                    <p>Add New Field:</p>
+                    <p>
+                        <label for="Single Line Text"></label>
+                        <select name="Single Line Text" id="Single Line Text">
+                            <option>Single Line Text</option>
+                        </select>
+                    </p>
+                </td>
+                <td align="">&nbsp;<span class="glyphicon glyphicon-plus"></span></td>
+            </tr>
+        </table>
+        <p>&nbsp;</p>
+        <div class="row placeholders"></div>
+        <!--</div>-->
+    </div>
+</div>
