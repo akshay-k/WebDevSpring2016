@@ -1,285 +1,317 @@
 <!--<div class="container-fluid">-->
-    <!--<div class="row">-->
-        <!--&lt;!&ndash;<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">&ndash;&gt;-->
-        <!--<h1 class="page-header">Forms : Registration Forms</h1>-->
-        <!--<p>&nbsp;</p>-->
-        <!--<p>&nbsp;</p>-->
-        <!--&lt;!&ndash;<table width="218">&ndash;&gt;-->
-            <!--&lt;!&ndash;<tr>&ndash;&gt;-->
-                <!--&lt;!&ndash;<ul class="nav nav-tabs">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<li role="presentation"&ndash;&gt;-->
-                        <!--&lt;!&ndash;ng-class="{active: model.$location.url()=='/forms', disabled: model.$location.url()=='/forms'}">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<a href="#/forms">Forms</a>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<li role="presentation"&ndash;&gt;-->
-                        <!--&lt;!&ndash;ng-class="{active: model.$location.url().includes('/form-fields'), disabled: model.$location.url().includes('/form-fields')}">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<a href="#/forms-fields">Fields</a>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
-                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
-            <!--&lt;!&ndash;</tr>&ndash;&gt;-->
+<!--<div class="row">-->
+<!--&lt;!&ndash;<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">&ndash;&gt;-->
+<!--<h1 class="page-header">Forms : Registration Forms</h1>-->
+<!--<p>&nbsp;</p>-->
+<!--<p>&nbsp;</p>-->
+<!--&lt;!&ndash;<table width="218">&ndash;&gt;-->
+<!--&lt;!&ndash;<tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<ul class="nav nav-tabs">&ndash;&gt;-->
+<!--&lt;!&ndash;<li role="presentation"&ndash;&gt;-->
+<!--&lt;!&ndash;ng-class="{active: model.$location.url()=='/forms', disabled: model.$location.url()=='/forms'}">&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="#/forms">Forms</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li role="presentation"&ndash;&gt;-->
+<!--&lt;!&ndash;ng-class="{active: model.$location.url().includes('/form-fields'), disabled: model.$location.url().includes('/form-fields')}">&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="#/forms-fields">Fields</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+<!--&lt;!&ndash;</tr>&ndash;&gt;-->
 
-        <!--&lt;!&ndash;</table>&ndash;&gt;-->
-        <!--&lt;!&ndash;<p>&nbsp;</p>&ndash;&gt;-->
-        <!--&lt;!&ndash;<table width="79%" border="1" class="table table-striped">&ndash;&gt;-->
-            <!--&lt;!&ndash;<tr>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td width="479" height="34">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>First Name:</p>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<label for="First Name"></label>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<input type="text" name="First Name" id="First Name" placeholder="First Name">&ndash;&gt;-->
-                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
-                <!--&lt;!&ndash;</td>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td width="168">&ndash;&gt;-->
-                    <!--&lt;!&ndash;&nbsp;<span class="glyphicon glyphicon-pencil"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-plus"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-remove"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-align-justify"></span>&ndash;&gt;-->
-                <!--&lt;!&ndash;</td>&ndash;&gt;-->
-            <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-            <!--&lt;!&ndash;<tr>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td height="37">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>Last Name:</p>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<label for="Last Name"></label>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<input type="text" name="Last Name" id="Last Name" placeholder="Last Name">&ndash;&gt;-->
-                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
-                <!--&lt;!&ndash;</td>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td>&ndash;&gt;-->
-                    <!--&lt;!&ndash;&nbsp;<span class="glyphicon glyphicon-pencil"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-plus"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-remove"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-align-justify"></span>&ndash;&gt;-->
-                <!--&lt;!&ndash;</td>&ndash;&gt;-->
-            <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-            <!--&lt;!&ndash;<tr>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td height="38">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>Date of Birth:</p>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<label for="Date of Birth"></label>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<input type="date" name="Date of Birth" id="Date of Birth" placeholder="Select Date">&ndash;&gt;-->
-                        <!--&lt;!&ndash;</input>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
-                <!--&lt;!&ndash;</td>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td>&ndash;&gt;-->
-                    <!--&lt;!&ndash;&nbsp;<span class="glyphicon glyphicon-pencil"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-plus"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-remove"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-align-justify"></span>&ndash;&gt;-->
-                <!--&lt;!&ndash;</td>&ndash;&gt;-->
-            <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-            <!--&lt;!&ndash;<tr>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td height="38">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>Gender:</p>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<label for="Gender"></label>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<select name="Gender" id="Gender">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<option value="Male">Male</option>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<option value="Female">Female</option>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<option value="Other">Other</option>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</select>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
-                <!--&lt;!&ndash;</td>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td align="">&ndash;&gt;-->
-                    <!--&lt;!&ndash;&nbsp;<span class="glyphicon glyphicon-pencil"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-plus"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-remove"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-align-justify"></span>&ndash;&gt;-->
-                <!--&lt;!&ndash;</td>&ndash;&gt;-->
-            <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-            <!--&lt;!&ndash;<tr>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td height="38">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>Roles:</p>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<label>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<input type="checkbox" name="Roles" value="Admin" id="Roles_0">&ndash;&gt;-->
-                            <!--&lt;!&ndash;Admin&ndash;&gt;-->
-                        <!--&lt;!&ndash;</label>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<br>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<label>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<input type="checkbox" name="Roles" value="Student" id="Roles_1">&ndash;&gt;-->
-                            <!--&lt;!&ndash;Student&ndash;&gt;-->
-                        <!--&lt;!&ndash;</label>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<br>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<label>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<input type="checkbox" name="Roles" value="User" id="Roles_2">&ndash;&gt;-->
-                            <!--&lt;!&ndash;User&ndash;&gt;-->
-                        <!--&lt;!&ndash;</label>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<br>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
-                <!--&lt;!&ndash;</td>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td align="">&ndash;&gt;-->
-                    <!--&lt;!&ndash;&nbsp;<span class="glyphicon glyphicon-pencil"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-plus"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-remove"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-align-justify"></span>&ndash;&gt;-->
-                <!--&lt;!&ndash;</td>&ndash;&gt;-->
-            <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-            <!--&lt;!&ndash;<tr>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td height="38">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>License Agreement:</p>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<label>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<input type="radio" name="License Agreement" value="Yes" id="LicenseAgreement_0" checked="true">&ndash;&gt;-->
-                            <!--&lt;!&ndash;Yes&ndash;&gt;-->
-                        <!--&lt;!&ndash;</label>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<br>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<label>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<input type="radio" name="License Agreement" value="No" id="LicenseAgreement_1">&ndash;&gt;-->
-                            <!--&lt;!&ndash;No&ndash;&gt;-->
-                        <!--&lt;!&ndash;</label>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<br>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
-                <!--&lt;!&ndash;</td>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td align="">&ndash;&gt;-->
-                    <!--&lt;!&ndash;&nbsp;<span class="glyphicon glyphicon-pencil"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-plus"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-remove"></span>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<span class="glyphicon glyphicon-align-justify"></span>&ndash;&gt;-->
-                <!--&lt;!&ndash;</td>&ndash;&gt;-->
-            <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-            <!--&lt;!&ndash;<tr>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td height="20">&nbsp;</td>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td align="">&nbsp;</td>&ndash;&gt;-->
-            <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-            <!--&lt;!&ndash;<tr>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td height="38">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>Add New Field:</p>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<p>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<label for="Single Line Text"></label>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<select name="Single Line Text" id="Single Line Text">&ndash;&gt;-->
-                            <!--&lt;!&ndash;<option>Single Line Text</option>&ndash;&gt;-->
-                        <!--&lt;!&ndash;</select>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</p>&ndash;&gt;-->
-                <!--&lt;!&ndash;</td>&ndash;&gt;-->
-                <!--&lt;!&ndash;<td align="">&nbsp;<span class="glyphicon glyphicon-plus"></span></td>&ndash;&gt;-->
-            <!--&lt;!&ndash;</tr>&ndash;&gt;-->
-        <!--&lt;!&ndash;</table>&ndash;&gt;-->
-        <!---->
-        <!--<p>&nbsp;</p>-->
-        <!--<div class="row placeholders"></div>-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-    <!--</div>-->
+<!--&lt;!&ndash;</table>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>&nbsp;</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<table width="79%" border="1" class="table table-striped">&ndash;&gt;-->
+<!--&lt;!&ndash;<tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<td width="479" height="34">&ndash;&gt;-->
+<!--&lt;!&ndash;<p>First Name:</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>&ndash;&gt;-->
+<!--&lt;!&ndash;<label for="First Name"></label>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="text" name="First Name" id="First Name" placeholder="First Name">&ndash;&gt;-->
+<!--&lt;!&ndash;</p>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;<td width="168">&ndash;&gt;-->
+<!--&lt;!&ndash;&nbsp;<span class="glyphicon glyphicon-pencil"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-plus"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-remove"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-align-justify"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;</tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<td height="37">&ndash;&gt;-->
+<!--&lt;!&ndash;<p>Last Name:</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>&ndash;&gt;-->
+<!--&lt;!&ndash;<label for="Last Name"></label>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="text" name="Last Name" id="Last Name" placeholder="Last Name">&ndash;&gt;-->
+<!--&lt;!&ndash;</p>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;<td>&ndash;&gt;-->
+<!--&lt;!&ndash;&nbsp;<span class="glyphicon glyphicon-pencil"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-plus"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-remove"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-align-justify"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;</tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<td height="38">&ndash;&gt;-->
+<!--&lt;!&ndash;<p>Date of Birth:</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>&ndash;&gt;-->
+<!--&lt;!&ndash;<label for="Date of Birth"></label>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="date" name="Date of Birth" id="Date of Birth" placeholder="Select Date">&ndash;&gt;-->
+<!--&lt;!&ndash;</input>&ndash;&gt;-->
+<!--&lt;!&ndash;</p>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;<td>&ndash;&gt;-->
+<!--&lt;!&ndash;&nbsp;<span class="glyphicon glyphicon-pencil"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-plus"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-remove"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-align-justify"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;</tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<td height="38">&ndash;&gt;-->
+<!--&lt;!&ndash;<p>Gender:</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>&ndash;&gt;-->
+<!--&lt;!&ndash;<label for="Gender"></label>&ndash;&gt;-->
+<!--&lt;!&ndash;<select name="Gender" id="Gender">&ndash;&gt;-->
+<!--&lt;!&ndash;<option value="Male">Male</option>&ndash;&gt;-->
+<!--&lt;!&ndash;<option value="Female">Female</option>&ndash;&gt;-->
+<!--&lt;!&ndash;<option value="Other">Other</option>&ndash;&gt;-->
+<!--&lt;!&ndash;</select>&ndash;&gt;-->
+<!--&lt;!&ndash;</p>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;<td align="">&ndash;&gt;-->
+<!--&lt;!&ndash;&nbsp;<span class="glyphicon glyphicon-pencil"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-plus"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-remove"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-align-justify"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;</tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<td height="38">&ndash;&gt;-->
+<!--&lt;!&ndash;<p>Roles:</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>&ndash;&gt;-->
+<!--&lt;!&ndash;<label>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="checkbox" name="Roles" value="Admin" id="Roles_0">&ndash;&gt;-->
+<!--&lt;!&ndash;Admin&ndash;&gt;-->
+<!--&lt;!&ndash;</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<br>&ndash;&gt;-->
+<!--&lt;!&ndash;<label>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="checkbox" name="Roles" value="Student" id="Roles_1">&ndash;&gt;-->
+<!--&lt;!&ndash;Student&ndash;&gt;-->
+<!--&lt;!&ndash;</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<br>&ndash;&gt;-->
+<!--&lt;!&ndash;<label>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="checkbox" name="Roles" value="User" id="Roles_2">&ndash;&gt;-->
+<!--&lt;!&ndash;User&ndash;&gt;-->
+<!--&lt;!&ndash;</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<br>&ndash;&gt;-->
+<!--&lt;!&ndash;</p>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;<td align="">&ndash;&gt;-->
+<!--&lt;!&ndash;&nbsp;<span class="glyphicon glyphicon-pencil"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-plus"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-remove"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-align-justify"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;</tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<td height="38">&ndash;&gt;-->
+<!--&lt;!&ndash;<p>License Agreement:</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>&ndash;&gt;-->
+<!--&lt;!&ndash;<label>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="radio" name="License Agreement" value="Yes" id="LicenseAgreement_0" checked="true">&ndash;&gt;-->
+<!--&lt;!&ndash;Yes&ndash;&gt;-->
+<!--&lt;!&ndash;</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<br>&ndash;&gt;-->
+<!--&lt;!&ndash;<label>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="radio" name="License Agreement" value="No" id="LicenseAgreement_1">&ndash;&gt;-->
+<!--&lt;!&ndash;No&ndash;&gt;-->
+<!--&lt;!&ndash;</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<br>&ndash;&gt;-->
+<!--&lt;!&ndash;</p>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;<td align="">&ndash;&gt;-->
+<!--&lt;!&ndash;&nbsp;<span class="glyphicon glyphicon-pencil"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-plus"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-remove"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="glyphicon glyphicon-align-justify"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;</tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<td height="20">&nbsp;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;<td align="">&nbsp;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;</tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<tr>&ndash;&gt;-->
+<!--&lt;!&ndash;<td height="38">&ndash;&gt;-->
+<!--&lt;!&ndash;<p>Add New Field:</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>&ndash;&gt;-->
+<!--&lt;!&ndash;<label for="Single Line Text"></label>&ndash;&gt;-->
+<!--&lt;!&ndash;<select name="Single Line Text" id="Single Line Text">&ndash;&gt;-->
+<!--&lt;!&ndash;<option>Single Line Text</option>&ndash;&gt;-->
+<!--&lt;!&ndash;</select>&ndash;&gt;-->
+<!--&lt;!&ndash;</p>&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--&lt;!&ndash;<td align="">&nbsp;<span class="glyphicon glyphicon-plus"></span></td>&ndash;&gt;-->
+<!--&lt;!&ndash;</tr>&ndash;&gt;-->
+<!--&lt;!&ndash;</table>&ndash;&gt;-->
+<!---->
+<!--<p>&nbsp;</p>-->
+<!--<div class="row placeholders"></div>-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--</div>-->
 <!--</div>-->
 
 
 <div class="container-fluid">
-<div class="row">
-<h1 class="page-header">Fields</h1>
-<div class="panel">
+    <div class="row">
+        <h1 class="page-header">Fields</h1>
+        <div class="panel">
 
-    <ul class="nav nav-tabs">
-        <li role="presentation" ng-class="{active: model.$location.url()=='/forms', disabled: model.$location.url()=='/forms'} "><a href="#/forms">Forms</a></li>
-        <li role="presentation" ng-class="{active: model.$location.url().includes('/fields'), disabled: model.$location.url().includes('/fields')} "><a href="#/fields">Fields</a></li>
-    </ul>
+            <ul class="nav nav-tabs">
+                <li role="presentation"
+                    ng-class="{active: model.$location.url()=='/forms', disabled: model.$location.url()=='/forms'} "><a
+                        href="#/forms">Forms</a></li>
+                <li role="presentation"
+                    ng-class="{active: model.$location.url().includes('/fields'), disabled: model.$location.url().includes('/fields')} ">
+                    <a href="#/fields">Fields</a></li>
+            </ul>
 
-    <div class="panel-body" >
-        <div class="field-list" ng-show="model.fields.length>0">
-            <div ng-repeat="field in model.fields" class="container spaced" ng-switch="field.type" id="{{$index}}">
-                <label> {{field.label}}: </label>
-                <div ng-switch-when="TEXT">
-                    <div class="col-xs-4">
-                        <input type="field.type" class="form-control" size="50" placeholder="{{field.placeholder}}">
+            <div class="panel-body">
+                <div class="field-list" ng-show="model.fields.length>0">
+                    <div jga-sortable
+                         jga-sortable-callback="model.sortField(start, end)">
+                        <div ng-repeat="field in model.fields" class="container spaced" ng-switch="field.type"
+                             id="{{$index}}">
+                            <label> {{field.label}}: </label>
+                            <div ng-switch-when="TEXT">
+                                <div class="col-xs-4">
+                                    <input type="field.type" class="form-control" size="50"
+                                           placeholder="{{field.placeholder}}">
+                                </div>
+                                <div class="col-xs-3 pull-right">
+                                    <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil"
+                                                                                aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    <a ng-click="model.deleteField(field._id, model.currentFormId)"><span
+                                            class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
+                                </div>
+                            </div>
+
+                            <div ng-switch-when="TEXTAREA">
+                                <div class="col-xs-4">
+                                    <textarea rows="2" cols="50" class="form-control"
+                                              placeholder="{{field.placeholder}}"></textarea>
+                                </div>
+                                <div class="col-xs-3 pull-right">
+                                    <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil"
+                                                                                aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    <a ng-click="model.deleteField(field._id, model.currentFormId)"><span
+                                            class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
+                                </div>
+                            </div>
+
+                            <div ng-switch-when="DATE">
+                                <input type="date">
+                                <div class="col-xs-3 pull-right">
+                                    <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil"
+                                                                                aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    <a ng-click="model.deleteField(field._id, model.currentFormId)"><span
+                                            class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
+                                </div>
+                            </div>
+
+                            <div ng-switch-when="OPTIONS">
+                                <div class="col-xs-4">
+                                    <select>
+                                        <option ng-repeat="option in field.options" value="{{option.value}}">
+                                            {{option.label}}
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-3 pull-right">
+                                    <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil"
+                                                                                aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    <a ng-click="model.deleteField(field._id, model.currentFormId)"><span
+                                            class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
+                                </div>
+                            </div>
+
+                            <div ng-switch-when="CHECKBOX">
+                                <div class="col-xs-3 pull-right">
+                                    <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil"
+                                                                                aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    <a ng-click="model.deleteField(field._id, model.currentFormId)"><span
+                                            class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
+                                </div>
+                                <div ng-repeat="option in field.options" class="col-xs-9">
+                                    <input type="checkbox" name="{{field._id}}" value="{{option.value}}">
+                                    {{option.label}}<br>
+                                </div>
+                            </div>
+
+                            <div ng-switch-when="EMAIL">
+                                <div class="col-xs-4">
+                                    <input type="field.type" class="form-control col-sm-3" size="50"
+                                           placeholder="{{field.placeholder}}">
+                                </div>
+                                <div class="col-xs-3 pull-right">
+                                    <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil"
+                                                                                aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    <a ng-click="model.deleteField(field._id, model.currentFormId)"><span
+                                            class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
+                                </div>
+                            </div>
+
+                            <div ng-switch-default>
+                                <div class="col-xs-3 pull-right">
+                                    <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil"
+                                                                                aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                    <a ng-click="model.deleteField(field._id, model.currentFormId)"><span
+                                            class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+                                    <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
+                                </div>
+                                <div ng-repeat="option in field.options" class="col-xs-9">
+                                    <input type="radio" name="{{field._id}}" value="{{option.value}}">
+                                    {{option.label}}<br>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="col-xs-3 pull-right">
-                        <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                        <a ng-click="model.deleteField(field._id, model.currentFormId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
+
+
+                    <h2 class="page-header"></h2>
+                    <div class="dropdown spaced"><label>Add New Field</label><br>
+                        <div class="col-xs-10">
+                            <select ng-model="model.newField">
+                                <option value="text">Single Line Text</option>
+                                <option value="area">Multi Line Text</option>
+                                <option value="date">Date</option>
+                                <option value="dropdown">Dropdown</option>
+                                <option value="checkbox">Checkboxes</option>
+                                <option value="radio">Radio Buttons</option>
+                            </select>
+                            <a ng-click="model.addField(model.newField)"><span
+                                    class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span></a>
+                        </div>
                     </div>
                 </div>
-
-                <div ng-switch-when="TEXTAREA">
-                    <div class="col-xs-4">
-                        <textarea rows="2" cols="50" class="form-control" placeholder="{{field.placeholder}}"></textarea>
-                    </div>
-                    <div class="col-xs-3 pull-right">
-                        <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                        <a ng-click="model.deleteField(field._id, model.currentFormId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
-                    </div>
-                </div>
-
-                <div ng-switch-when="DATE">
-                    <input type="date">
-                    <div class="col-xs-3 pull-right">
-                        <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                        <a ng-click="model.deleteField(field._id, model.currentFormId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
-                    </div>
-                </div>
-
-                <div ng-switch-when="OPTIONS">
-                    <div class="col-xs-4">
-                        <select>
-                            <option ng-repeat="option in field.options" value="{{option.value}}">{{option.label}}</option>
-                        </select>
-                    </div>
-                    <div class="col-xs-3 pull-right">
-                        <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                        <a ng-click="model.deleteField(field._id, model.currentFormId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
-                    </div>
-                </div>
-
-                <div ng-switch-when="CHECKBOXES">
-                    <div class="col-xs-3 pull-right">
-                        <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                        <a ng-click="model.deleteField(field._id, model.currentFormId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
-                    </div>
-                    <div ng-repeat="option in field.options" class="col-xs-9">
-                        <input type="checkbox" name="{{field._id}}" value="{{option.value}}"> {{option.label}}<br>
-                    </div>
-                </div>
-
-                <div ng-switch-when="EMAIL">
-                    <div class="col-xs-4">
-                        <input type="field.type" class="form-control col-sm-3" size="50" placeholder="{{field.placeholder}}">
-                    </div>
-                    <div class="col-xs-3 pull-right">
-                        <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                        <a ng-click="model.deleteField(field._id, model.currentFormId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
-                    </div>
-                </div>
-
-                <div ng-switch-default>
-                    <div class="col-xs-3 pull-right">
-                        <a ng-click="model.openDialog(field)"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                        <a ng-click="model.deleteField(field._id, model.currentFormId)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
-                        <span class="glyphicon glyphicon-align-justify handler" aria-hidden="true"></span>
-                    </div>
-                    <div ng-repeat="option in field.options" class="col-xs-9">
-                        <input type="radio" name="{{field._id}}" value="{{option.value}}"> {{option.label}}<br>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <h2 class="page-header"></h2>
-        <div class="dropdown spaced"><label>Add New Field</label><br>
-            <div class="col-xs-10">
-                <select ng-model="model.newField">
-                    <option value="text">Single Line Text</option>
-                    <option value="area">Multi Line Text</option>
-                    <option value="date">Date</option>
-                    <option value="dropdown">Dropdown</option>
-                    <option value="checkbox">Checkboxes</option>
-                    <option value="radio">Radio Buttons</option>
-                </select>
-                <a ng-click="model.addField(model.newField)"><span class="glyphicon glyphicon-plus pull-right" aria-hidden="true"></span></a>
             </div>
         </div>
     </div>
 </div>
-</div>
-    </div>
 
 <div id="dialog-single" title="Single Line Field">
     <form>

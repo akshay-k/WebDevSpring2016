@@ -13,14 +13,27 @@ module.exports = function(app, userModel) {
     app.put("/api/assignment/admin/update/:id", adminupdate);
     app.delete("/api/assignment/user/:id", deleteuserbyid);
 
-    var uuid = require('uuid');
+    //var uuid = require('uuid');
 
     function getuserbyusername(req, res){
+        //var username = req.query.username;
+        //var users = userModel.findUserByUsername(username);
+        //req.session.currentUser = users;
+        ////console.log(users);
+        //res.json(users);
+
         var username = req.query.username;
-        var users = userModel.findUserByUsername(username);
-        req.session.currentUser = users;
-        //console.log(users);
-        res.json(users);
+        var users = userModel.findUserByUsername(username)
+            .then(
+                function (doc) {
+                    req.session.currentUser = doc;
+                    res.json(doc);
+                },
+
+                function (err) {
+                    err.status(400).send(err);
+                }
+            )
 
         //var username = req.params.username;
         //var user = null;
@@ -47,26 +60,75 @@ module.exports = function(app, userModel) {
 
     function newuser(req,res){
         var user = req.body;
-        user._id = uuid.v1();
-        user = userModel.createUser(user);
-        req.session.currentUser = user;
-        res.json(user);
+        user.roles = ['student'];
 
-        //var user = req.body;
-        //
-        //user = userModel.createUser(user)
+        userModel.createUser(user)
+            .then(
+                function (doc) {
+                    req.session.currentUser = doc;
+                    res.json(user);
+                },
+                function (err) {
+                    res.status(400).send(err);
+                }
+            );
+
+        //userModel
+        //    .findUserByUsername(user.username)
         //    .then(
-        //        function (doc) {
-        //            req.json(user);
+        //        function (usr) {
+        //            if(usr){
+        //                res.json(null);
+        //            }
+        //            else{
+        //                return userModel.createUser(user);
+        //            }
         //        },
-        //
-        //        function(err){
-        //            res.status.send(err);
+        //        function (err) {
+        //            res.status(400).send(err);
+        //        }
+        //    )
+        //    .then(
+        //        function (usr) {
+        //            if(usr){
+        //                req.login(usr, function (err) {
+        //                    if(err){
+        //                        res.status(400).send(err);
+        //                    }
+        //                    else{
+        //                        res.json(usr);
+        //                    }
+        //                });
+        //            }
+        //        },
+        //        function (err) {
+        //            res.status(400).send(err);
         //        }
         //    );
+
+
+        //var user = req.body;
+        //user._id = uuid.v1();
+        //user = userModel.createUser(user);
+        //req.session.currentUser = user;
+        //res.json(user);
     }
 
     function getusers(req, res){
+        //if(req.query.hasOwnProperty("username")){
+        //    if(req.query.hasOwnProperty("password")){
+        //        getuserbycredentials(req, res);
+        //    }
+        //    else{
+        //        getuserbyusername(req, res);
+        //    }
+        //}
+        //else{
+        //    var users = userModel.findAllUsers();
+        //    //console.log( show_all_methods(userModel));
+        //    res.json(users);
+        //}
+
         if(req.query.hasOwnProperty("username")){
             if(req.query.hasOwnProperty("password")){
                 getuserbycredentials(req, res);
@@ -76,17 +138,36 @@ module.exports = function(app, userModel) {
             }
         }
         else{
-            var users = userModel.findAllUsers();
-            //console.log( show_all_methods(userModel));
-            res.json(users);
+            userModel.findAllUsers()
+                .then(
+                    function (doc) {
+                        res.json(doc);
+                    },
+
+                    function (err) {
+                        res.status(400).send(err);
+                    }
+                )
         }
     }
 
     function getuserbyid(req, res){
 
-        var userId = req.params.userId;
-        var user = userModel.findUserByUserId(userId);
-        res.json(user);
+        //var userId = req.params.userId;
+        //var user = userModel.findUserByUserId(userId);
+        //res.json(user);
+
+        var userId = req.params.id;
+        userModel.findUserByUserId(userId)
+            .then(
+                function (doc){
+                    res.json(doc);
+                },
+
+                function (err) {
+                    res.status(400).send(err);
+                }
+            )
         //var userId = req.params.userId;
         //var user = null;
         //
@@ -105,10 +186,23 @@ module.exports = function(app, userModel) {
     }
 
     function findUserByCredentials(req, res){
+        //var credentials = req.body;
+        //var user = userModel.findUserByCredentials(credentials);
+        //req.session.currentUser = user;
+        //res.json(user);
+
         var credentials = req.body;
-        var user = userModel.findUserByCredentials(credentials);
-        req.session.currentUser = user;
-        res.json(user);
+        userModel.findUserByCredentials(credentials)
+            .then(
+                function(doc){
+                    req.session.currentUser = doc;
+                    res.json(doc);
+                },
+
+                function (err) {
+                    res.status(400).send(err);
+                }
+            )
 
         //var credentials = req.body;
         //var user = userModel.findUserByCredentials(credentials)
@@ -124,11 +218,31 @@ module.exports = function(app, userModel) {
     }
 
     function updateuserbyid(req,res){
+        //var user = req.body;
+        //var id = req.params.userId;
+        //req.session.currentUser = user;
+        //var users = userModel.updateUser(id,user);
+        //res.json(users);
+
         var user = req.body;
-        var id = req.params.userId;
-        req.session.currentUser = user;
-        var users = userModel.updateUser(id,user);
-        res.json(users);
+        var id = req.params.id;
+
+        if(typeof user.roles == "string"){
+            user.roles = user.roles.split(",");
+        }
+
+        userModel.updateUser(id, user)
+            .then(
+                function (doc) {
+                    //console.log(doc);
+                    req.session.currentUser = doc;
+                    res.json(doc);
+                },
+
+                function (err) {
+                    res.status(400).send(err);
+                }
+            )
 
         //var userId = req.params.userId;
         //var user = null;
@@ -148,9 +262,23 @@ module.exports = function(app, userModel) {
     }
 
     function  deleteuserbyid(req, res){
+        //var userId = req.params.userId;
+        //var user = userModel.deleteUser(userId);
+        //res.json(user);
+
         var userId = req.params.id;
-        var user = userModel.deleteUser(userId);
-        res.json(user);
+
+        var user = userModel.deleteUser(userId)
+            .then(
+                function (doc) {
+                    req.session.currentUser = doc;
+                    res.json(doc);
+                },
+
+                function (err) {
+                    res.status(400).send(err);
+                }
+            )
 
         //var userId = req.params.userId;
         //var user = null;
@@ -179,16 +307,44 @@ module.exports = function(app, userModel) {
     }
 
     function addadmin(req, res){
+        //var user = req.body;
+        ////user._id = uuid.v1();
+        //user = userModel.createUser(user);
+        //res.json(userModel.updateUser(user._id,user));
+
         var user = req.body;
-        user._id = uuid.v1();
-        user = userModel.createUser(user);
-        res.json(userModel.updateUser(user._id,user));
+        //var userid = req.params.id;
+        userModel.createUser(user)
+            .then(
+                function (doc) {
+                    res.json(doc);
+                },
+
+                function (err) {
+                    res.status(400).send(err);
+                }
+            )
     }
 
     function adminupdate(req, res){
+        //var userid = req.params.id;
+        //var user = req.body;
+        //var users = userModel.updateUser(userid, user);
+        //res.json(users);
+
         var userid = req.params.id;
         var user = req.body;
-        var users = userModel.updateUser(userid, user);
-        res.json(users);
+
+        userModel.updateUser(userid, user)
+            .then(
+                function (doc) {
+                    res.json(doc);
+                },
+
+                function (err) {
+                    res.status(400).send(err);
+                }
+            )
     }
+
 }

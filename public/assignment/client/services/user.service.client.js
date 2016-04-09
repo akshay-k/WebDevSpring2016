@@ -123,7 +123,7 @@
 
         function  deleteUserById(userId) {
 
-            return $http.delete("/api/assignment/user/:"+userId);
+            return $http.delete("/api/assignment/user/"+userId);
             //var found = null;
             //for(var u in users)
             //{

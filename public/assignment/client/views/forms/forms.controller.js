@@ -29,6 +29,7 @@
                 .findAllFormsForUser(vm.user_id)
                 .then(function(response) {
                     vm.allForms = angular.copy(response.data);
+                    console.log(vm.allForms);
                 });
         }
 
@@ -37,15 +38,17 @@
             if (Object.keys(newForm).length == 0) {
                 return;
             }
+            //console.log(newForm.title);
 
             newForm["userId"] = vm.user_id;
+            newForm["title"] = newForm.title;
             newForm["fields"] = [];
             FormService
                 .createFormForUser(vm.user_id, newForm)
                 .then(function(){
                     vm.select = {};
+                    loadForms();
                 });
-            loadForms();
         }
 
         function updateForm(newForm) {
@@ -56,16 +59,18 @@
                 .updateFormById(newForm._id, newForm)
                 .then(function(){
                     vm.select = {};
+                    loadForms();
                 });
-            loadAllForms();
+
         }
 
         function deleteForm(formId) {
             FormService
                 .deleteFormById(formId)
                 .then(function(){
+                    loadForms();
                 });
-            loadAllForms();
+
         }
 
         function selectForm(selected) {

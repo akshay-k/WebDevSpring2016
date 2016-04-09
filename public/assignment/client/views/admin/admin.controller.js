@@ -48,7 +48,8 @@
                 .adminAdd(newUser)
                 .then(function(response){
                     vm.edit = {};
-                    vm.allUsers = response.data;
+                    //vm.allUsers = response.data;
+                    loadUsers();
                 });
         }
 
@@ -63,7 +64,8 @@
                 .adminUpdate(newUser._id, newUser)
                 .then(function(response){
                     vm.edit = {};
-                    vm.allUsers = response.data;
+                    //vm.allUsers = response.data;
+                    loadUsers();
                 });
         }
 
@@ -71,8 +73,9 @@
             UserService
                 .deleteUserById(userId)
                 .then(function(){
+                    loadUsers();
                 });
-            loadAllUsers();
+
         }
 
         function editUser(selected) {

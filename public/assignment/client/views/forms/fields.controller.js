@@ -145,16 +145,27 @@
             vm.user_id = $rootScope.currentUser._id;
             loadFields();
             vm.newField = "text";
+            vm.sortField = sortField;
         }
         init();
 
         function loadFields() {
-            FormService
-                .getFormById(vm.currentFormId)
-                .then(function(response) {
-                    vm.currentForm = response.data;
-                    vm.fields = angular.copy(vm.currentForm.fields);
-                    vm.fieldsFix = angular.copy(vm.currentForm.fields);
+            //FormService
+            //    .getFormById(vm.currentFormId)
+            //    .then(function(response) {
+            //        vm.currentForm = response.data;
+            //        vm.fields = angular.copy(vm.currentForm.fields);
+            //        vm.fieldsFix = angular.copy(vm.currentForm.fields);
+            //        console.log(vm.fields);
+            //    });
+            FieldService
+                .getFieldsForForm(vm.currentFormId)
+                .then(function (response) {
+                    //vm.currentForm = response.data;
+                    vm.fields = angular.copy(response.data.fields);
+                    //vm.fields = vm.currentForm.fields;
+                    vm.fieldsFix = angular.copy(response.data.fields);
+                    console.log(vm.fields);
                 });
         }
 
@@ -162,8 +173,9 @@
             FieldService
                 .deleteFieldFromForm(formId, fieldId)
                 .then(function(){
+                    loadFields();
                 });
-            loadFields();
+
         }
 
         function openDialog(field) {
@@ -197,24 +209,24 @@
             var field = {};
             switch (fieldType) {
                 case "text":
-                    field._id = null;
+                    //field._id = null;
                     field.label = "New Text Field";
                     field.placeholder = "New Field";
                     field.type = "TEXT";
                     break;
                 case "area":
-                    field._id = null;
+                    //field._id = null;
                     field.label = "New Text Field";
                     field.placeholder = "New Field";
                     field.type = "TEXTAREA";
                     break;
                 case "date":
-                    field._id = null;
+                    //field._id = null;
                     field.label = "New Date Field";
                     field.type = "DATE";
                     break;
                 case "dropdown":
-                    field._id = null;
+                    //field._id = null;
                     field.label = "New Dropdown";
                     field.type = "OPTIONS";
                     field.options = [
@@ -224,9 +236,9 @@
                     ];
                     break;
                 case "checkbox":
-                    field._id = null;
+                    //field._id = null;
                     field.label = "New Checkboxes";
-                    field.type = "CHECKBOXES";
+                    field.type = "CHECKBOX";
                     field.options = [
                         {"label": "Option A", "value": "OPTION_A"},
                         {"label": "Option B", "value": "OPTION_B"},
@@ -234,9 +246,9 @@
                     ];
                     break;
                 case "radio":
-                    field._id = null;
+                    //field._id = null;
                     field.label = "New Radio Buttons";
-                    field.type = "RADIOS";
+                    field.type = "RADIO";
                     field.options =  [
                         {"label": "Option X", "value": "OPTION_X"},
                         {"label": "Option Y", "value": "OPTION_Y"},
@@ -247,8 +259,9 @@
             FieldService
                 .createFieldForForm(vm.currentFormId,field)
                 .then(function(){
+                    loadFields();
                 });
-            loadFields();
+
         }
 
         function updateField() {
@@ -259,8 +272,9 @@
             FieldService
                 .updateField(vm.currentFormId, vm.currentField._id, vm.currentField)
                 .then(function () {
+                    loadFields();
                 });
-            loadFields();
+
         }
 
         function serializeOptions(options) {
@@ -285,24 +299,36 @@
         }
 
 
-        setTimeout(function(){
-            $(".field-list").sortable({
-                connectWith: ".field-list",
-                handle: ".handler",
-                update: function (event, ui) {
-                    var idsInOrder = $(".field-list").sortable("toArray");
-                    var sortedfields = [];
-                    for (var i = 0; i < idsInOrder.length; i++) {
-                        sortedfields.push(vm.fieldsFix[idsInOrder[i]]);
+        //setTimeout(function(){
+        //    $(".field-list").sortable({
+        //        connectWith: ".field-list",
+        //        handle: ".handler",
+        //        update: function (event, ui) {
+        //            var idsInOrder = $(".field-list").sortable("toArray");
+        //            var sortedfields = [];
+        //            for (var i = 0; i < idsInOrder.length; i++) {
+        //                sortedfields.push(vm.fieldsFix[idsInOrder[i]]);
+        //            }
+        //            vm.currentForm.fields = angular.copy(sortedfields);
+        //            FormService
+        //                .updateFormById(vm.currentFormId, vm.currentForm)
+        //                .then(function (response) {
+        //                    vm.currentForm = response.data;
+        //                })
+        //        }
+        //    }).disableSelection();
+        //});
+
+        function sortField(start, end) {
+            FieldService
+                .sortField($routeParams.formId, start, end)
+                .then(
+                    function (response) {
+                    },
+                    function (err) {
+                        vm.error = err;
                     }
-                    vm.currentForm.fields = angular.copy(sortedfields);
-                    FormService
-                        .updateFormById(vm.currentFormId, vm.currentForm)
-                        .then(function (response) {
-                            vm.currentForm = response.data;
-                        })
-                }
-            }).disableSelection();
-        });
+                );
+        }
     }
 })();

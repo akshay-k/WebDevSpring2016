@@ -9,7 +9,7 @@ module.exports = function() {
         updateUser: updateUser,
         findUserByUsername: findUserByUsername,
         findUserByUserId: findUserByUserId,
-        findAllUsers: findAllUsers,
+        findAllUsers: findAllUsers
         //logout: logout
     };
     return api;
