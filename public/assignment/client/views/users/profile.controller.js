@@ -5,7 +5,7 @@
         .module("FormBuilderApp")
         .controller("ProfileController", ProfileController);
 
-    function ProfileController($location, UserService){
+    function ProfileController(UserService){
 
         var vm = this;
 
@@ -17,6 +17,8 @@
                 .then(function(response) {
                     vm.newUser = response.data;
                 })
+
+            //vm.updateUser = updateUser;
         }
         init();
 
@@ -24,18 +26,39 @@
         function updateUser(user){
             UserService
                 .updateUser(user._id, user)
-                .then(function () {
-                    //if(response.data){
-                        //console.log("Hello");
-                        //UserService.setCurrentUser(user);
-                    //}
-                });
-            UserService
-                .getCurrentUser()
                 .then(function (response) {
-                    vm.updatedUser = response.data;
-                    UserService.setCurrentUser(vm.updatedUser);
-                })
+                    //if(response.data){
+                    //    console.log("Hello");
+                    //    UserService.setCurrentUser(user);
+                    //}
+                    //vm.updatedUser = response.data;
+                    //UserService.setCurrentUser(vm.updatedUser);
+
+                    //UserService
+                    //    .getCurrentUser()
+                    //    .then(function (response) {
+                    //        UserService.setCurrentUser(response.data);
+                    //        //console.log(response);
+                    //    })
+
+                    var user = response.data;
+                    UserService.setCurrentUser(user);
+
+                });
+            //UserService
+            //    .findUserByUserId(user._id)
+            //    .then(function (response) {
+            //        console.log(response);
+            //        vm.updatedUser = response.data;
+            //        UserService.setCurrentUser(vm.updatedUser);
+            //    });
+            //UserService
+            //    .getCurrentUser()
+            //    .then(function (response) {
+            //        //vm.currentuser = response.data;
+            //        UserService.setCurrentUser(response.data);
+            //        console.log(response);
+            //    })
         }
 
         //$scope.currentuser = angular.copy($rootScope.user);

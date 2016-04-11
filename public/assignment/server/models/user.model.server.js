@@ -103,6 +103,9 @@ module.exports = function(db, mongoose){
     }
 
     function updateUser(userid, user){
+
+
+
         //var deferred = q.defer();
         ////console.log(userid);
         //UserModel
@@ -127,7 +130,8 @@ module.exports = function(db, mongoose){
 
         delete user ["_id"];
 
-        return UserModel.update({_id: userid}, {$set: user});
+        return UserModel.findByIdAndUpdate(userid, user, {new: true});
+
 
     }
 

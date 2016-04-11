@@ -4,11 +4,11 @@ module.exports = function(app, userModel) {
     app.post("/api/assignment/user", newuser);
     app.post("/api/assignment/admin/add", addadmin);
     app.get("/api/assignment/user", getusers);
-    app.get("/api/assignment/user/:id", getuserbyid);
-    //app.get("/api/assignment/user?username=", getuserbyusername);
-    app.post("/api/assignment/user/login", findUserByCredentials);
     app.post("/api/assignment/user/logout", logout);
     app.get("/api/assignment/loggedin", loggedin);
+    app.post("/api/assignment/user/login", findUserByCredentials);
+    app.get("/api/assignment/user/:id", getuserbyid);
+    //app.get("/api/assignment/user?username=", getuserbyusername);
     app.put("/api/assignment/user/:id", updateuserbyid);
     app.put("/api/assignment/admin/update/:id", adminupdate);
     app.delete("/api/assignment/user/:id", deleteuserbyid);
@@ -227,22 +227,47 @@ module.exports = function(app, userModel) {
         var user = req.body;
         var id = req.params.id;
 
-        if(typeof user.roles == "string"){
-            user.roles = user.roles.split(",");
-        }
+        //if(typeof user.roles == "string"){
+        //    user.roles = user.roles.split(",");
+        //}
+
+        //userModel.updateUser(id, user)
+        //    .then(
+        //        function (doc) {
+        //            //console.log("update user");
+        //            //console.log(doc);
+        //            //req.session.currentUser =
+        //            userModel.findUserByUserId(id)
+        //                .then(
+        //                    function (response) {
+        //
+        //                        req.session.currentUser = response;
+        //                        //console.log("session check user");
+        //                        //console.log(req.session.currentUser);
+        //
+        //                    }
+        //                )
+        //            //req.session.currentUser = doc;
+        //            res.json(doc);
+        //            //res.status(200);
+        //        },
+        //
+        //        function (err) {
+        //            res.status(400).send(err);
+        //        }
+        //    )
 
         userModel.updateUser(id, user)
             .then(
-                function (doc) {
-                    //console.log(doc);
-                    req.session.currentUser = doc;
-                    res.json(doc);
+                function (updatedUser) {
+                    req.session.currentUser = updatedUser;
+                    res.json(updatedUser);
                 },
-
                 function (err) {
+                    console.log(err);
                     res.status(400).send(err);
                 }
-            )
+            );
 
         //var userId = req.params.userId;
         //var user = null;
@@ -303,6 +328,7 @@ module.exports = function(app, userModel) {
     }
 
     function loggedin(req, res) {
+        //console.log(req.session.currentUser);
         res.json(req.session.currentUser);
     }
 

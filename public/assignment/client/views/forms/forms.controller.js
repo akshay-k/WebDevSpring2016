@@ -29,7 +29,7 @@
                 .findAllFormsForUser(vm.user_id)
                 .then(function(response) {
                     vm.allForms = angular.copy(response.data);
-                    console.log(vm.allForms);
+                    //console.log(vm.allForms);
                 });
         }
 

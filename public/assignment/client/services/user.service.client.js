@@ -72,7 +72,8 @@
             logout: logout,
             getCurrentUser:getCurrentUser,
             adminAdd: adminAdd,
-            adminUpdate: adminUpdate
+            adminUpdate: adminUpdate,
+            findUserByUserId: findUserByUserId
         };
         return api;
 
@@ -139,7 +140,7 @@
             //callback(users);
         }
 
-        function updateUser (userId, user) {
+        function updateUser(userId, user) {
 
             return $http.put("/api/assignment/user/"+userId,user);
 
@@ -158,7 +159,7 @@
             $rootScope.currentUser = user;
         }
 
-        function getCurrentUser(user) {
+        function getCurrentUser() {
             return $http.get("/api/assignment/loggedin");
         }
 
@@ -172,6 +173,10 @@
 
         function adminUpdate(userId, user) {
             return $http.put("/api/assignment/admin/update/"+userId, user);
+        }
+
+        function findUserByUserId(userId){
+            return $http.get("/api/assignment/user/"+userId);
         }
     }
 })();

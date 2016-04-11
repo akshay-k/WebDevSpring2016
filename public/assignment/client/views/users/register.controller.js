@@ -17,6 +17,10 @@
         init();
 
         function createUser(user){
+            if(user.password != user.verifypassword){
+                alert("Password don't match");
+                return;
+            }
             UserService
                 .createUser(user)
                 .then(function (response) {
