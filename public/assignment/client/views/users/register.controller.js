@@ -12,12 +12,12 @@
         vm.createUser = createUser;
 
         function init(){
-
+            vm.$location = $location;
         }
         init();
 
         function createUser(user){
-            if(user.password != user.verifypassword){
+            if( user.password == null || user.verifypassword == null ||user.password != user.verifypassword){
                 alert("Password don't match");
                 return;
             }
@@ -26,24 +26,13 @@
                 .then(function (response) {
                     var currentUser = response.data;
                     if(currentUser != null){
-                        UserService.setCurrentUser(user);
+                        UserService.setCurrentUser(response.data);
                         $location.url("/profile");
+                    }
+                    else{
+                        alert("Username already present");
                     }
                 });
         }
-        //$scope.createUser = function() {
-        //        var verifypassword = $scope.currentuser.verifypassword;
-        //        if ($scope.currentuser.password != verifypassword) {
-        //            alert("Passwords dont match!");
-        //            return;
-        //        }
-        //        $scope.currentuser["firstName"] = null;
-        //        $scope.currentuser["lastName"] = null;
-        //        $scope.currentuser["roles"] = [];
-        //        UserService.createUser($scope.currentuser, function(newUser) {
-        //            $rootScope.user = newUser;
-        //            $location.path("/profile");
-        //        });
-        //}
     }
 })();

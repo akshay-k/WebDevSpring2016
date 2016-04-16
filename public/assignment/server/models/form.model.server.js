@@ -18,10 +18,6 @@ module.exports = function (db, mongoose) {
     return api;
 
     function createForm(userId, form) {
-        //form.userId = userId;
-        //mock.push(form);
-        //return form;
-
         var deferred = q.defer();
 
         FormModel.create(form, function (err, doc) {
@@ -38,31 +34,14 @@ module.exports = function (db, mongoose) {
     }
 
     function findFormById(formId) {
-        //for(var u in mock) {
-        //    if( mock[u]._id == formId ) {
-        //        return mock[u];
-        //    }
-        //}
-        //return null;
-
         return FormModel.findById(formId);
     }
 
     function findFormsByUserId(userId) {
-        //var forms = [];
-        //for (var u in mock) {
-        //    if (mock[u].userId == userId) {
-        //        forms.push (mock[u]);
-        //    }
-        //}
-        //return forms;
-
         return FormModel.find({userId: userId});
     }
 
     function findAllForms() {
-        //return mock;
-
         var deferred = q.defer();
 
         FormModel.find(function (err, doc) {
@@ -70,7 +49,7 @@ module.exports = function (db, mongoose) {
                 deferred.reject(err);
             }
             else{
-             deferred.resolve(doc);
+                deferred.resolve(doc);
             }
         });
 
@@ -78,16 +57,6 @@ module.exports = function (db, mongoose) {
     }
 
     function updateForm(formId, updatedForm) {
-        //for(var u in mock) {
-        //    if( mock[u]._id == formId ) {
-        //        mock[u].title = updatedForm.title;
-        //        mock[u].userId = updatedForm.userId;
-        //        mock[u].fields = updatedForm.fields;
-        //
-        //        return mock[u];
-        //    }
-        //}
-        //return null;
 
         var deferred = q.defer();
 
@@ -109,12 +78,6 @@ module.exports = function (db, mongoose) {
     }
 
     function deleteForm(formId) {
-        /*for(var u in mock) {
-            if( mock[u]._id == formId ) {
-                mock.splice(u,1);
-                break;
-            }
-        }*/
 
         var deferred = q.defer();
 
@@ -138,12 +101,6 @@ module.exports = function (db, mongoose) {
     }
 
     function findFormByTitle(title) {
-        //for(var u in mock) {
-        //    if( mock[u].title === title) {
-        //        return mock[u];
-        //    }
-        //}
-        //return null;
 
         var deferred = q.defer();
 

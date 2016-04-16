@@ -52,3 +52,7 @@ th{
     text-align: left;
     cursor:pointer;
 }
+
+.table-width{
+    width : auto;
+}

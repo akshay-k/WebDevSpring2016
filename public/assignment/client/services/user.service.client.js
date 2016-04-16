@@ -77,18 +77,6 @@
         };
         return api;
 
-        //var users = [
-        //    {        "_id":123, "firstName":"Alice",            "lastName":"Wonderland",
-        //        "username":"alice",  "password":"alice",   "roles": ["student"], "email": ["alice@wonderland.com"]               },
-        //    {        "_id":234, "firstName":"Bob",              "lastName":"Hope",
-        //        "username":"bob",    "password":"bob",     "roles": ["admin"], "email": ["bob@hope.com"]                },
-        //    {        "_id":345, "firstName":"Charlie",          "lastName":"Brown",
-        //        "username":"charlie","password":"charlie", "roles": ["faculty"], "email":["charlie@brown.com"]                },
-        //    {        "_id":456, "firstName":"Dan",              "lastName":"Craig",
-        //        "username":"dan",    "password":"dan",     "roles": ["faculty", "admin"], "email":["dan@craig.com"]},
-        //    {        "_id":567, "firstName":"Edward",           "lastName":"Norton",
-        //        "username":"ed",     "password":"ed",      "roles": ["student"], "email":["edward@norton.com"]                }
-        //]
 
         function findUserByUsername (username){
             return $http.get("/api/assignment/user?username="+username);
@@ -97,62 +85,25 @@
         function findUserByCredentials (credentials) {
 
             return $http.post("/api/assignment/user/login",credentials);
-            //var found = null;
-            //for(var u in users)
-            //{
-            //    if(users[u].username == username && users[u].password == password)
-            //    {
-            //        found = users[u];
-            //        break;
-            //    }
-            //}
-            //callback(found);
+
         }
 
         function findAllUsers (callback) {
-            return $http.get("/api/assignment/user");
-            //callback(users);
+            return $http.get("/api/assignment/admin/user");
         }
 
         function createUser (user) {
             return $http.post("/api/assignment/user",user);
-
-            //user["_id"] = (new Date).getTime();
-            //users.push(user);
-            //callback(user);
         }
 
         function  deleteUserById(userId) {
 
-            return $http.delete("/api/assignment/user/"+userId);
-            //var found = null;
-            //for(var u in users)
-            //{
-            //    if(users[u]._id == userId)
-            //    {
-            //        found = u;
-            //        break;
-            //    }
-            //}
-            //if(found != null) {
-            //    users.splice(u,1);
-            //}
-            //callback(users);
+            return $http.delete("/api/assignment/admin/user/"+userId);
         }
 
         function updateUser(userId, user) {
 
             return $http.put("/api/assignment/user/"+userId,user);
-
-            //for(var u in users)
-            //{
-            //    if(users[u]._id == userId)
-            //    {
-            //        users[u] = user;
-            //        break;
-            //    }
-            //}
-            //callback(user);
         }
 
         function setCurrentUser(user) {
@@ -168,11 +119,11 @@
         }
 
         function adminAdd(user) {
-            return $http.post("/api/assignment/admin/add", user);
+            return $http.post("/api/assignment/admin/user", user);
         }
 
         function adminUpdate(userId, user) {
-            return $http.put("/api/assignment/admin/update/"+userId, user);
+            return $http.put("/api/assignment/admin/user/"+userId, user);
         }
 
         function findUserByUserId(userId){

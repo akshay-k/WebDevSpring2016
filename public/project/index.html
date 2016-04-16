@@ -12,7 +12,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="views/dashboard.css" rel="stylesheet">
+    <link href="client/views/dashboard.css" rel="stylesheet">
 
     <!--Jquery CDN-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -24,28 +24,43 @@
 
    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular-route.min.js"></script>-->
 
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+
+    <link href="client/views/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- styles -->
+    <link href="client/views/css/styles.css" rel="stylesheet">
+
+
+
     <script src="app.js"></script>
     <script src="config.js"></script>
-    <script src="views/main/main.controller.js"></script>
-    <script src="views/sidebar/sidebar.controller.js"></script>
-    <script src="views/header/header.controller.js"></script>
-    <script src="services/user.service.client.js"></script>
-    <script src="views/users/login.controller.js"></script>
-    <script src="views/users/register.controller.js"></script>
-    <script src="views/users/profile.controller.js"></script>
-    <script src="views/admin/admin.controller.js"></script>
+    <script src="client/views/main/main.controller.js"></script>
+    <script src="client/views/sidebar/sidebar.controller.js"></script>
+    <script src="client/views/header/header.controller.js"></script>
+    <script src="client/services/user.service.client.js"></script>
+    <script src="client/views/users/login.controller.js"></script>
+    <script src="client/views/users/register.controller.js"></script>
+    <script src="client/views/users/profile.controller.js"></script>
+    <script src="client/views/admin/admin.controller.js"></script>
     <!--<script src="views/forms/forms.controller.js"></script>-->
-    <script src="views/details/details.controller.js"></script>
-    <script src="views/search/search.controller.js"></script>
+    <script src="client/views/details/details.controller.js"></script>
+    <script src="client/views/search/search.controller.js"></script>
     <!--<script src="services/forms.service.client.js"></script>-->
-    <script src="services/news.service.js"></script>
-    <script src="views/home/home.controller.js"></script>
+    <script src="client/services/news.service.js"></script>
+    <script src="client/views/home/home.controller.js"></script>
 </head>
 <body ng-controller="MainController">
-<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+<!--<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">-->
     <div ng-include="headerpath"></div>
     <div ng-include="sidepath"></div>
     <div ng-view></div>
-</div>
+<!--</div>-->
+
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="client/views/bootstrap/js/bootstrap.min.js"></script>
+<script src="client/views/js/custom.js"></script>
+
 </body>
 </html>

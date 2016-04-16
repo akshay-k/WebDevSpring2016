@@ -6,7 +6,7 @@
         .config(function ($routeProvider) {
             $routeProvider
                 .when("/home", {
-                    templateUrl: "views/home/home.view.html",
+                    templateUrl: "client/views/home/home.view.html",
                     controller: "HomeController"
                 })
                 .when("/profile", {
@@ -30,11 +30,11 @@
                     controller: "RegisterController"
                 })
                 .when("/login", {
-                    templateUrl: "views/users/login.view.html",
+                    templateUrl: "clientviews/users/login.view.html",
                     controller: "LoginController"
                 })
                 .when("/search", {
-                    templateUrl: "views/search/search.view.html",
+                    templateUrl: "client/views/search/search.view.html",
                     controller: "SearchController"
                 })
                 .otherwise({

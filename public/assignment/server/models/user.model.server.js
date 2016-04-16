@@ -19,43 +19,11 @@ module.exports = function(db, mongoose){
     };
     return api;
 
-    //function init(){
-    //    var ins = UserModel.findOneAndUpdate(
-    //        for(var i=1; i<mock.length; i++){
-    //
-    //        }
-    //    )
-    //}
-
     function findUserByUserId(userid){
-        //var deferred = q.defer();
-        //UserModel.findById({_id: userid}, function (err, doc) {
-        //
-        //    if(err){
-        //        deferred.reject(err);
-        //    }else{
-        //
-        //        deferred.resolve(doc);
-        //    }
-        //});
-        //return deferred.promise;
-
         return UserModel.findById(userid);
     }
 
     function createUser(user){
-        //var deferred = q.defer();
-        //
-        //UserModel.create(user, function (err, doc){
-        //    if(err){
-        //        deferred.reject(err);
-        //    }else{
-        //        deferred.resolve(doc);
-        //    }
-        //});
-        //
-        //return deferred.promise;
-
         return UserModel.create(user);
     }
 
@@ -81,49 +49,10 @@ module.exports = function(db, mongoose){
     }
 
     function deleteUser(userid){
-        //var deferred = q.defer();
-        //
-        //UserModel.remove({_id: userid}, function (err, users) {
-        //    if(err){
-        //        deferred.reject(err);
-        //    }else{
-        //        UserModel.find(function (err, doc) {
-        //            if(err){
-        //                deferred.reject(err);
-        //            }else{
-        //                deferred.resolve(doc);
-        //            }
-        //        });
-        //    }
-        //});
-        //
-        //return deferred.promise;
-
         return UserModel.remove({_id: userid});
     }
 
     function updateUser(userid, user){
-
-
-
-        //var deferred = q.defer();
-        ////console.log(userid);
-        //UserModel
-        //    .findByIdAndUpdate (
-        //        userid,
-        //        user,
-        //        {new: true},
-        //        function (err, stats) {
-        //            if (!err) {
-        //                deferred.resolve(stats);
-        //            } else {
-        //                deferred.reject(err);
-        //            }
-        //        }
-        //    );
-        //
-        //return deferred.promise;
-
         if(user.username == "root"){
             user.roles = ["admin"];
         }
@@ -131,14 +60,11 @@ module.exports = function(db, mongoose){
         delete user ["_id"];
 
         return UserModel.findByIdAndUpdate(userid, user, {new: true});
-
-
     }
 
-    function findUserByUsername(user){
+    function findUserByUsername(username){
         var deferred = q.defer();
-
-        UserModel.findOne({user: user}, function (err, doc) {
+        UserModel.findOne({username: username}, function (err, doc) {
             if(err){
                 deferred.reject(err);
             }else{
@@ -147,21 +73,11 @@ module.exports = function(db, mongoose){
         });
 
         return deferred.promise;
+
+        //return UserModel.find({username: username});
     }
 
     function findAllUsers(){
-        //var deferred = q.defer();
-        //
-        //UserModel.find(function (err, doc) {
-        //    if(err){
-        //        deferred.reject(err);
-        //    }else{
-        //        deferred.resolve(doc);
-        //    }
-        //});
-        //
-        //return deferred.promise;
-
         return UserModel.find();
     }
 

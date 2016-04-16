@@ -19,10 +19,11 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a ng-class="{disabled: model.$location.url()=='/register'}" href="#/register" ng-show="!currentUser">Register</a></li>
-                    <li><a ng-class="{disabled: model.$location.url()=='/login'}" href="#/login" ng-show="!currentUser">Login</a></li>
                     <li><a ng-class="{disabled: model.$location.url()=='/profile'}" ng-show="currentUser" href="#/profile">{{currentUser.username}}</a></li>
                     <li><a ng-click="model.logout()" ng-show="currentUser" href="#/index">Logout</a></li>
+                    <li><a ng-class="{disabled: model.$location.url()=='/register'}" href="#/register" ng-show="!currentUser">Register</a></li>
+                    <li><a ng-class="{disabled: model.$location.url()=='/login'}" href="#/login" ng-show="!currentUser">Login</a></li>
+
                 </ul>
                 <form class="navbar-form navbar-right"></form>
             </div>

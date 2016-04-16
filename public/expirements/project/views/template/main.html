@@ -11,10 +11,13 @@
                     });
                 });
             </script>
-            <div class="conference-slider">
+            <table>
+                <tbody>
+                <tr ng-repeat="news in data">
+            <div class="conference-slider" data-ng-init="render()">
                 <!-- Slideshow 3 -->
                 <ul class="conference-rslide rslides rslides1" id="conference-slider">
-                    <li id="rslides1_s0" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 500ms ease-in-out;"><img src="images/c22.jpg" alt=""></li>
+                    <li id="rslides1_s0" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 500ms ease-in-out;"><img ng-src="{{news.thubnail_standard}}" alt=""></li>
                     <li id="rslides1_s1" class="" style="float: none; position: absolute; opacity: 0; z-index: 1; display: list-item; transition: opacity 500ms ease-in-out;"><img src="images/c1.jpg" alt=""></li>
                     <li id="rslides1_s2" class="" style="float: none; position: absolute; opacity: 0; z-index: 1; display: list-item; transition: opacity 500ms ease-in-out;"><img src="images/c33.jpg" alt=""></li>
                     <li id="rslides1_s3" class="rslides1_on" style="float: left; position: relative; opacity: 1; z-index: 2; display: list-item; transition: opacity 500ms ease-in-out;"><img src="images/c44.jpg" alt=""></li>
@@ -30,6 +33,9 @@
                     <p>Lorem ipsum dolor sit amet, consectetur Nulla quis lorem neque, mattis venenatis lectus. </p>
                 </div>
             </div>
+                </tr>
+                </tbody>
+            </table>
             <h5 class="breaking">Breaking news</h5>
         </div>
         <div class="posts">
