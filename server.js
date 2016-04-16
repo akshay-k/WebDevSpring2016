@@ -23,13 +23,18 @@ app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
-//app.use(session({ secret: process.env.SESSION_SECRET,
-//                  resave: true,
-//                  saveUninitialized: true}));
 
-app.use(session({ secret: "Akshay",
-    resave: true,
-    saveUninitialized: true}));
+console.log(process.env.SESSION_SECRET);
+
+app.use(session({ secret: process.env.SESSION_SECRET,
+                  resave: true,
+                  saveUninitialized: true}));
+
+
+
+//app.use(session({ secret: "Akshay",
+//    resave: true,
+//    saveUninitialized: true}));
 
 app.use(passport.initialize());
 app.use(passport.session());
