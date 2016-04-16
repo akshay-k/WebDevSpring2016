@@ -53,7 +53,7 @@ module.exports = function(db, mongoose){
     }
 
     function updateUser(userid, user){
-        if(user.username == "roott"){
+        if(user.username == "root"){
             user.roles = ["admin"];
         }
 
