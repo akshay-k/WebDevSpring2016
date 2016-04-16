@@ -1,67 +1,107 @@
 <div class="container-fluid">
     <div class="row">
-        <!--<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">-->
-            <h1 class="page-header">Admin</h1>
-            <p><h3>Users</h3></p>
-            <table width="460" border="1" class="table table-striped">
-                <thead>
-                <tr>
-                    <th>
-                        <a ng-click="model.sortType = 'username'; model.reverseSort = !model.reverseSort">
-                        <span ng-show="model.sortType == 'username' && !model.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
-                        <span ng-show="model.sortType == 'username' && model.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+        <!--<div class="col-sm-9 col-sm-offset-3 col-md-12 col-md-offset-0 main">-->
+        <h1 class="page-header">Admin</h1>
+        <p>
+        <h3>Users</h3></p>
+        <table border="1" class="table table-striped">
+            <thead>
+            <tr>
+                <th>
+                    <a ng-click="model.sortType = 'username'; model.reverseSort = !model.reverseSort">
+                        <span ng-show="model.sortType == 'username' && !model.reverseSort"
+                              class="glyphicon glyphicon-triangle-bottom"></span>
+                        <span ng-show="model.sortType == 'username' && model.reverseSort"
+                              class="glyphicon glyphicon-triangle-top"></span>
                         Username
-                        </a>
-                    </th>
-                    <th>
-                        <a ng-click="model.sortType = 'password'; model.reverseSort = !model.reverseSort">
-                        <span ng-show="model.sortType == 'password' && !model.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
-                        <span ng-show="model.sortType == 'password' && model.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+                    </a>
+                </th>
+                <th>
+                    <a ng-click="model.sortType = 'password'; model.reverseSort = !model.reverseSort">
+                        <span ng-show="model.sortType == 'password' && !model.reverseSort"
+                              class="glyphicon glyphicon-triangle-bottom"></span>
+                        <span ng-show="model.sortType == 'password' && model.reverseSort"
+                              class="glyphicon glyphicon-triangle-top"></span>
                         Password
-                        </a>
-                    </th>
-                    <th>
-                        <a ng-click="model.sortType = 'roles'; model.reverseSort = !model.reverseSort">
-                        <span ng-show="model.sortType == 'roles' && !model.reverseSort" class="glyphicon glyphicon-triangle-bottom"></span>
-                        <span ng-show="model.sortType == 'roles' && model.reverseSort" class="glyphicon glyphicon-triangle-top"></span>
+                    </a>
+                </th>
+                <th>
+                    <a ng-click="model.sortType = 'firstName'; model.reverseSort = !model.reverseSort">
+                        <span ng-show="model.sortType == 'firstName' && !model.reverseSort"
+                              class="glyphicon glyphicon-triangle-bottom"></span>
+                        <span ng-show="model.sortType == 'firstName' && model.reverseSort"
+                              class="glyphicon glyphicon-triangle-top"></span>
+                        FirstName
+                    </a>
+                </th>
+                <th>
+                    <a ng-click="model.sortType = 'lastName'; model.reverseSort = !model.reverseSort">
+                        <span ng-show="model.sortType == 'lastName' && !model.reverseSort"
+                              class="glyphicon glyphicon-triangle-bottom"></span>
+                        <span ng-show="model.sortType == 'lastName' && model.reverseSort"
+                              class="glyphicon glyphicon-triangle-top"></span>
+                        LastName
+                    </a>
+                </th>
+                <th>
+                    <a ng-click="model.sortType = 'roles'; model.reverseSort = !model.reverseSort">
+                        <span ng-show="model.sortType == 'roles' && !model.reverseSort"
+                              class="glyphicon glyphicon-triangle-bottom"></span>
+                        <span ng-show="model.sortType == 'roles' && model.reverseSort"
+                              class="glyphicon glyphicon-triangle-top"></span>
                         Role
-                        </a>
-                    </th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-              <tr>
-                <td id="size1"><label for="username"></label>
-                    <input ng-model="model.edit.username" type="text" name="username" id="username" class="form-control" placeholder="username"></td>
-                <td id="size2"><label for="password"></label>
-                    <input ng-model="model.edit.password" type="text" name="password" id="password" class="form-control" placeholder="password"></td>
-                <td id="size3"><label for="role"></label>
-                    <input ng-model="model.edit.roles" type="text" name="role" id="role" class="form-control" placeholder="role"></td>
-                <td>&nbsp;
-                    <a ng-click="model.addUser(model.edit)">
+                    </a>
+                </th>
+                <th width="10%">Actions</th>
+            </tr>
+            </thead>
+            <tr>
+                <td>
+                    <input ng-model="model.edit.username" type="text" name="username" id="username"
+                           class="form-control"
+                           placeholder="username"></td>
+                <td>
+                    <input ng-model="model.edit.password" type="password" name="password" id="password"
+                           class="form-control"
+                           placeholder="password"></td>
+                <td>
+                    <input ng-model="model.edit.firstName" type="text" name="firstName" id="firstname"
+                           class="form-control"
+                           placeholder="firstname"></td>
+                <td>
+                    <input ng-model="model.edit.lastName" type="text" name="lastName" id="lastname"
+                           class="form-control"
+                           placeholder="lastname"></td>
+                <td>
+                    <input ng-model="model.edit.roles" type="text" name="role" id="role" class="form-control"
+                           placeholder="role"></td>
+                <td>
+                    <a class="btn btn-default" ng-click="model.addUser(model.edit)">
                         <span class="glyphicon glyphicon-plus"></span>
                     </a>
-                    <a ng-click="model.updateUser(model.edit)">
+                    <a class="btn btn-default" ng-click="model.updateUser(model.edit)">
                         <span class="glyphicon glyphicon-ok"></span>
                     </a>
                 </td>
-              </tr>
-              <tr ng-repeat="usr in model.allUsers | orderBy:model.sortType:model.reverseSort">
+
+            </tr>
+            <tr ng-repeat="usr in model.allUsers | orderBy:model.sortType:model.reverseSort">
                 <td>{{usr.username}}</td>
-                <td>{{usr.password}}</td>
+                <td></td>
+                <td>{{usr.firstName}}</td>
+                <td>{{usr.lastName}}</td>
                 <td>{{usr.roles.toString()}}</td>
-                <td>&nbsp;
-                    <a ng-click="model.removeUser(usr._id)">
+                <td>
+                    <a class="btn btn-default" ng-click="model.removeUser(usr._id)">
                         <span class="glyphicon glyphicon-remove"></span>
                     </a>
-                    <a ng-click="model.editUser(usr)">
-                        <span class="glyphicon glyphicon-pencil"></span>
+                    <a class="btn btn-default" ng-click="model.editUser(usr)">
+                        <span class="glyphicon glyphicon-cog"></span>
                     </a>
                 </td>
-              </tr>
-          </table>
-            <p>&nbsp;</p>
-            <div class="row placeholders"></div>
-<!--</div>-->
+            </tr>
+        </table>
+        <p>&nbsp;</p>
+        <div class="row placeholders"></div>
     </div>
 </div>
