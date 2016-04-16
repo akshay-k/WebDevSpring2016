@@ -12,7 +12,7 @@ module.exports = function(app, userModel) {
     app.post("/api/assignment/admin/user", auth, addadmin);
     app.get("/api/assignment/admin/user", getusers);
     app.post("/api/assignment/user/logout", logout);
-    app.get("/api/assignment/loggedin", auth, loggedin);
+    app.get("/api/assignment/loggedin", loggedin);
     app.post("/api/assignment/user/login", passport.authenticate('FormBuilderApp'), login);
     app.get("/api/assignment/user/:id", auth, getuserbyid);
     app.get("/api/assignment/user?username=", getuserbyusername);

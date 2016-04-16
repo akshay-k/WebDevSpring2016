@@ -1,5 +1,5 @@
 "use strict";
 
 (function () {
-    angular.module("NewsPortal",["ngRoute"]);
+    angular.module("FormBuilderApp",["ngRoute", "jgaDirectives"]);
 })();
