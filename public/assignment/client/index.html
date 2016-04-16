@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="FormBuilderApp">
+<head>
+    <!--<link rel="icon" href="../../favicon.ico">-->
+
+    <title>Index</title>
+
+    <meta charset="UTF-8">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="views/dashboard.css" rel="stylesheet">
+
+    <!--Jquery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!--Angular JS CDN-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.min.js"></script>
+    <!--Angular JS Routing CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-route.js"></script>
+
+   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular-route.min.js"></script>-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="views/main/main.controller.js"></script>
+    <script src="views/sidebar/sidebar.controller.js"></script>
+    <script src="views/header/header.controller.js"></script>
+    <script src="services/user.service.client.js"></script>
+    <script src="views/users/login.controller.js"></script>
+    <script src="views/users/register.controller.js"></script>
+    <script src="views/users/profile.controller.js"></script>
+    <script src="views/admin/admin.controller.js"></script>
+    <script src="views/forms/forms.controller.js"></script>
+    <script src="views/forms/fields.controller.js"></script>
+    <script src="services/forms.service.client.js"></script>
+    <script src="services/field.service.client.js"></script>
+    <script src="directives/jga-directives.js"></script>
+</head>
+<body ng-controller="MainController">
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <div ng-include="headerpath"></div>
+    <div ng-include="sidepath"></div>
+    <div ng-view></div>
+</div>
+</body>
+</html>
