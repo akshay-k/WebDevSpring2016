@@ -1,0 +1,14 @@
+[
+    {        "firstName":"Alice",            "lastName":"Wonderland",
+        "username":"alice",  "password":"alice",   "roles": ["student"], "emails": ["alice@wonderland.com"]               },
+    {        "firstName":"Bob",              "lastName":"Hope",
+        "username":"bob",    "password":"bob",     "roles": ["admin"], "emails": ["bob@hope.com"]                },
+    {        "firstName":"Charlie",          "lastName":"Brown",
+        "username":"charlie","password":"charlie", "roles": ["faculty"], "emails":["charlie@brown.com"]                },
+    {        "firstName":"Dan",              "lastName":"Craig",
+        "username":"dan",    "password":"dan",     "roles": ["faculty", "admin"], "emails":["dan@craig.com"]},
+    {        "firstName":"Edward",           "lastName":"Norton",
+        "username":"ed",     "password":"ed",      "roles": ["student"], "emails":["edward@norton.com"]                },
+    {        "firstName":"admin",           "lastName":"admin",
+        "username":"root",     "password":"password",      "roles": ["admin"], "emails":["admin@admin.com"]                }
+]
