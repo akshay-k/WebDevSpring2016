@@ -7,31 +7,31 @@
             $routeProvider
                 .when("/home", {
                     templateUrl: "views/home/home.view.html",
-                    resolve:{ loggedin: getloggedin}
+                    resolve:{ getLoggedIn: getLoggedIn}
                 })
                 .when("/profile", {
                     templateUrl: "views/users/profile.view.html",
                     controller: "ProfileController",
                     controllerAs: "model",
-                    resolve: { loggedin: checkloggedin}
+                    resolve: { checkLoggedIn: checkLoggedIn}
                 })
                 .when("/admin", {
                     templateUrl: "views/admin/admin.view.html",
                     controller: "AdminController",
                     controllerAs: "model",
-                    resolve: {loggedin: checkadmin}
+                    resolve: {checkLoggedIn: checkLoggedIn, checkAdmin: checkAdmin}
                 })
                 .when("/forms", {
                     templateUrl: "views/forms/forms.view.html",
                     controller: "FormsController",
                     controllerAs: "model",
-                    resolve: {loggedin: checkloggedin}
+                    resolve: {checkLoggedIn: checkLoggedIn}
                 })
                 .when("/form/:formId/fields", {
                     templateUrl: "views/forms/forms-fields.view.html",
                     controller: "FieldsController",
                     controllerAs: "model",
-                    resolve: {loggedin: checkloggedin}
+                    resolve: {checkLoggedIn: checkLoggedIn}
                 })
                 .when("/register", {
                     templateUrl: "views/users/register.view.html",
@@ -48,91 +48,56 @@
                 })
         });
 
-    var getloggedin =  function getLoggedIn(UserService, $q, $rootScope, $http) {
+    function getLoggedIn(UserService, $q) {
         var deferred = $q.defer();
 
-        //UserService
-        //    .getCurrentUser()
-        //    .then(function(response){
-        //        var currentUser = response.data;
-        //        UserService.setCurrentUser(currentUser);
-        //        deferred.resolve();
-        //    });
-
-        $http.get("/api/assignment/loggedin")
-            .success(function (user) {
-                if(user !== '0'){
-                    $rootScope.currentUser = user;
-                }
-
+        UserService
+            .getCurrentUser()
+            .then(function(response){
+                var currentUser = response.data;
+                UserService.setCurrentUser(currentUser);
                 deferred.resolve();
-        })
+            });
 
         return deferred.promise;
     }
 
-    var checkloggedin = function checkLoggedIn(UserService, $q, $location, $http, $rootScope) {
+    function checkLoggedIn(UserService, $q, $location) {
 
         var deferred = $q.defer();
 
-        //UserService
-        //    .getCurrentUser()
-        //    .then(function(response) {
-        //        var currentUser = response.data;
-        //        if(currentUser) {
-        //            UserService.setCurrentUser(currentUser);
-        //            deferred.resolve();
-        //        } else {
-        //            UserService.setCurrentUser(null);
-        //            deferred.reject();
-        //            $location.url("/login");
-        //        }
-        //    });
-
-        $http.get("/api/assignment/loggedin")
-            .success(function (user) {
-
-                if(user !== '0'){
-                    $rootScope.currentUser = user;
+        UserService
+            .getCurrentUser()
+            .then(function(response) {
+                var currentUser = response.data;
+                if(currentUser) {
+                    UserService.setCurrentUser(currentUser);
                     deferred.resolve();
-                }
-                else{
+                } else {
+                    UserService.setCurrentUser(null);
                     deferred.reject();
                     $location.url("/login");
                 }
-            })
+            });
 
         return deferred.promise;
     }
 
-    var checkadmin =  function checkAdmin(UserService, $q, $location, $http, $rootScope) {
+    function checkAdmin(UserService, $q, $location) {
 
         var deferred = $q.defer();
 
-        //UserService
-        //    .getCurrentUser()
-        //    .then(function(response) {
-        //        var currentUser = response.data;
-        //        if(currentUser && currentUser.roles.indexOf('admin')>-1) {
-        //            deferred.resolve();
-        //        } else {
-        //            deferred.reject();
-        //            $location.url("/home");
-        //        }
-        //    });
-
-        $http.get("/api/assignment/loggedin")
-            .success(function (user) {
-                if(user !== '0' && user.roles.indexOf('admin')>-1){
-                    $rootScope.currentUser = user;
+        UserService
+            .getCurrentUser()
+            .then(function(response) {
+                var currentUser = response.data;
+                if(currentUser && currentUser.roles.indexOf('admin')>-1) {
                     deferred.resolve();
-                }
-
-                else{
+                } else {
                     deferred.reject();
                     $location.url("/home");
                 }
-            })
+            });
 
         return deferred.promise;
     }

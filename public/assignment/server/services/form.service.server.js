@@ -11,6 +11,9 @@ module.exports = function(app, formModel) {
     //var uuid = require('uuid');
 
     function getformbyuser(req, res){
+        //var userid = req.params.userId;
+        //var users = formModel.findFormsByUserId(userid);
+        //res.json(users);
 
         var userid = req.params.userId;
         formModel.findFormsByUserId(userid)
@@ -26,6 +29,9 @@ module.exports = function(app, formModel) {
     }
 
     function getbyformbyid(req, res){
+        //var formid = req.params.formId;
+        //var forms = formModel.findFormById(formid);
+        //res.json(forms);
 
         var formid = req.params.formId;
 
@@ -42,6 +48,9 @@ module.exports = function(app, formModel) {
     }
 
     function deleteform(req, res){
+        //var formid = req.params.formId;
+        //formModel.deleteform(formid);
+        //res.send(204);
 
         var formid = req.params.formId;
 
@@ -59,6 +68,11 @@ module.exports = function(app, formModel) {
     }
 
     function createform(req, res){
+        //var userid = req.params.userId;
+        //var form = req.body;
+        //form._id = uuid.v1();
+        //var forms = formModel.createForm(userid, form);
+        //res.json(forms);
 
         var userid = req.params.userId;
         var form = req.body;
@@ -76,6 +90,11 @@ module.exports = function(app, formModel) {
     }
 
     function updateform(req, res){
+        //var formid = req.params.formId;
+        //var form = req.body;
+        //var forms = formModel.updateForm(formid, form);
+        //res.json(forms);
+
         var formid = req.params.formId;
         var form = req.body;
 

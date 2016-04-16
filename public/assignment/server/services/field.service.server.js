@@ -8,8 +8,13 @@ module.exports = function(app, fieldModel) {
     app.put("/api/assignment/form/:formId/field/:fieldId", updateField);
     app.put("/api/application/:formId/page", updateFields);
 
+    //var uuid = require('uuid');
 
     function getFieldsByFormId(req, res) {
+        //var formid = req.params.formId;
+        //var fields = fieldModel.findFieldsByFormId(formId);
+        //res.json(fields);
+
         var formid = req.params.formId;
         fieldModel.findFieldsByFormId(formid)
             .then(
@@ -24,6 +29,11 @@ module.exports = function(app, fieldModel) {
     }
 
     function getFieldById(req, res) {
+        //var formid = req.params.formId;
+        //var fieldid = req.params.fieldId;
+        //var fields = fieldModel.findFieldById(fieldid, formid);
+        //res.json(fields);
+
         var formid = req.params.formId;
         var fieldid = req.params.fieldId;
 
@@ -40,6 +50,11 @@ module.exports = function(app, fieldModel) {
     }
 
     function deleteFieldById(req, res) {
+        //var formId = req.params.formId;
+        //var fieldId = req.params.fieldId;
+        //fieldModel.deleteField(fieldId, formId);
+        //res.send(204);
+
         var formId = req.params.formId;
         var fieldId = req.params.fieldId;
 
@@ -56,6 +71,12 @@ module.exports = function(app, fieldModel) {
     }
 
     function createField(req, res) {
+        //var formid = req.params.formId;
+        //var field = req.body;
+        //field._id = uuid.v1();
+        //var fields = fieldModel.createField(field, formid);
+        //res.json(fields);
+
         var formid = req.params.formId;
         var field = req.body;
 
@@ -72,6 +93,12 @@ module.exports = function(app, fieldModel) {
     }
 
     function updateField(req, res) {
+        //var formid = req.params.formId;
+        //var fieldid = req.params.fieldId;
+        //var field = req.body;
+        //var fields = fieldModel.updateField(field, fieldid, formid);
+        //res.json(fields);
+
         var formid = req.params.formId;
         var fieldid = req.params.fieldId;
         var field = req.body;
@@ -107,4 +134,5 @@ module.exports = function(app, fieldModel) {
                 );
         }
     }
+
 };
