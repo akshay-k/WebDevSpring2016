@@ -1,0 +1,83 @@
+<!--<div class="container">-->
+<!--<h2>Search</h2>-->
+
+<!--<div>-->
+<!--<input ng-model="user"-->
+<!--class="form-control"-->
+<!--placeholder="Search By Username"/>-->
+
+<!--<br>-->
+
+<!--<button ng-click="model.search(user)"-->
+<!--class="btn btn-primary btn-block">-->
+<!--Search-->
+<!--</button>-->
+<!--</div>-->
+
+
+<!--<br><br>-->
+
+<!--<h4 ng-if="results == 0"> No Users Found !!</h4>-->
+
+<!--<div ng-if="results !=0">-->
+<!--<img ng-src="views/single-article/avatar.png">-->
+<!--{{results.username}}-->
+<!--</div>-->
+<!--</div>-->
+
+<div id="page-wrapper">
+    <div class="main-page">
+        <h2 class="title1">Search Users</h2>
+        <input type="text" class="form-control" ng-model="model.query1" placeholder="Search by Username">
+        <!--<input type="text" class="form-control" id="exampleInputName3" ng-model="model.query2" style="padding: 1.239em 0.5em; font-size: 1.2em; width: 34%; float:left" placeholder="Last name">-->
+        <br>
+        <button class="btn btn-primary btn-block" ng-click="model.search(model.query1)">Search</button>
+
+        <h4 style="margin: 1em" ng-if="model.results.length == 0">
+            No users found.
+        </h4>
+
+        <div ng-if="model.results.length != 0" class="elements  row" style="margin-top: 1em">
+            <div ng-repeat="user in model.results">
+                <div>
+                    <br>
+                    <!--<img ng-src="{{user.image}}" alt="" height="100" width="100" style="background: white">-->
+                    <img ng-src="views/single-article/avatar.png"><br>
+                    <h3 style="float: left;">{{user.username}}</h3>
+                    <br><br><br>
+                    <button class="btn-danger" ng-click="model.follow(currentUser ,user.username)">Follow</button>
+                    <!--<h3 style="float: left; clear: right; margin-left: 0.6em">{{user.lastName}}</h3>-->
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+<!--<div>-->
+<!--<h3>Search Results</h3>-->
+<!--<table class="table table-striped">-->
+<!--<thead>-->
+<!--<tr>-->
+<!--&lt;!&ndash;<th>Image</th>&ndash;&gt;-->
+<!--<th>Title</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+<!--<tr ng-repeat="news in data">-->
+<!--&lt;!&ndash;<td>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;<img ng-src="{{news.thumbnail_standard}}"/>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<img ng-src="{{news.multimedia[1].url}}">&ndash;&gt;-->
+<!--&lt;!&ndash;</td>&ndash;&gt;-->
+<!--<td>-->
+<!--&lt;!&ndash;<a href="#/details/{{news.article}}">&ndash;&gt;-->
+<!--<a href="{{news.web_url}}">-->
+<!--{{news.lead_paragraph}}-->
+<!--</a>-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--&lt;!&ndash;{{news.abstract}}&ndash;&gt;-->
+<!--</td>-->
+<!--</tr>-->
+<!--</tbody>-->
+<!--</table>-->
+<!--</div>-->

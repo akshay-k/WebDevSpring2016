@@ -5,27 +5,35 @@
         .module("NewsApp")
         .controller("HeaderController", HeaderController);
 
-    function HeaderController ($rootScope, $scope, $location, UserService){
-        $scope.currentUser = $rootScope.user;
-        $rootScope.$watch("user", function(){
-            $scope.currentUser = $rootScope.user;
-        })
+    function HeaderController ($location, UserService, NewsService, $window){
 
-        $scope.logout = function(){
-            $rootScope.user = null;
+       var vm = this;
+
+        vm.logout = logout;
+        vm.search = search;
+
+        function init(){
+            vm.$location = $location;
         }
-        //$scope.$location = $location;
-        //
-        //$scope.logout = function(){
-        //    $scope.currentUser = null;
-        //    UserService.logout();
-        //    $scope.username= null;
-        //    $scope.password = null;
-        //}
-        //
-        //$scope.getCurrentUser = function(){
-        //    console.log(UserService.getCurrentUser());
-        //    return UserService.getCurrentUser();
-        //}
+        init();
+
+        function logout(){
+            UserService
+                .logout()
+                .then(function () {
+                    UserService.setCurrentUser(null);
+                    $location.url("/home");
+                });
+        }
+
+        function search(article){
+            //var art = angular.toJson(article);
+            NewsService
+                .setarticle(article)
+                .then(function () {
+                        $window.location.reload();
+                        $location.url("/search");
+                })
+        }
     }
 })();

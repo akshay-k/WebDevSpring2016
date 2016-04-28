@@ -1,0 +1,27 @@
+<div class="page-content">
+    <div>
+        <div class="row">
+            <div>
+                <div class="row">
+                    <div>
+                        <h1>Sports HeadLines</h1>
+                        <br><br><br>
+                        <!--<div ng-repeat="news in data" class="gridStyle">-->
+                        <ul class="newsheadlines">
+                            <li ng-repeat="news in data">
+                                <br>
+                                <a href ng-click="model.sendUrl(news)">
+                                    <img ng-src="{{news.thumbnail_standard}}" height="200px"/>
+                                    <br>
+                                    <div id="lots">
+                                    {{news.title}}
+                                        </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

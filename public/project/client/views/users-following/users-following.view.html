@@ -1,0 +1,47 @@
+<!--<div id="page-content">-->
+    <!--<div>-->
+        <!--<div class="row">-->
+            <!--<h3>Following</h3>-->
+            <!--<br>-->
+            <!--&lt;!&ndash;<h3 class="title1" style="margin-bottom: 0.8em">Following <span class="compose pull-right" ng-click="model.moreFollowing()" >More <span class="fa fa-chevron-right"></span></span></h3>&ndash;&gt;-->
+            <!--<h4 style="margin: 1.5em" ng-if="model.following.length == 0">You are not following anyone.</h4>-->
+
+            <!--<div ng-repeat="following in model.following" class="newsheadlines">-->
+                <!--<img ng-src="views/single-article/avatar.png"><br>-->
+                <!--<h3 ng-click="model.href(following.username)" style="float: left;">{{following.username}}</h3>-->
+                <!--&lt;!&ndash;<h3 ng-click="model.href(following.username)" style="float: left; clear: right; margin-left: 0.6em">{{following.lastName}}</h3>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="clearfix"></div>&ndash;&gt;-->
+                <!--<br><br><br>-->
+                <!--<button class="btn-danger" ng-click="model.unfollow(following.username)">Unfollow</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div class="page-content">
+    <div>
+        <div class="row">
+            <div>
+                <div class="row">
+                    <div>
+                        <h1>Following</h1>
+                        <br><br><br>
+                        <h4 style="margin: 1.5em" ng-if="model.following.length == 0">You are not following anyone.</h4>
+                        <!--<div ng-repeat="news in data" class="gridStyle">-->
+                        <ul class="newsheadlines">
+                            <li ng-repeat="following in model.following">
+                                <br>
+                                <img ng-src="views/single-article/avatar.png"><br>
+                                <br>
+                                    <h3>{{following.username}}</h3>
+                                <br>
+                                <button class="btn-danger" ng-click="model.unfollow(following.username)">Unfollow</button>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -24,8 +24,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 
-console.log(process.env.SESSION_SECRET);
-
 app.use(session({ secret: process.env.SESSION_SECRET,
                   resave: true,
                   saveUninitialized: true}));
@@ -39,7 +37,12 @@ app.use(session({ secret: process.env.SESSION_SECRET,
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
 var port = process.env.OPENSHIFT_NODEJS_PORT || 3000;
-require("./public/assignment/server/app.js")(app, db, mongoose);
+//require("./public/project/server/app.js")(app, db, mongoose);
+//require("./public/assignment/server/app.js")(app, db, mongoose);
+
+require("./public/app.js")(app, db);
+
 app.listen(port, ipaddress);

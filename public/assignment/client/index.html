@@ -46,12 +46,12 @@
 </head>
 <body ng-controller="MainController">
 <!--<div  class="main">-->
-<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+<!--<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">-->
     <div ng-include="headerpath"></div>
     <!--<div class="col-sm-2" ng-include="sidepath"></div>-->
     <!--<div class="col-sm-10" ng-view></div>-->
-    <div ng-include="sidepath"></div>
-    <div ng-view></div>
-</div>
+    <div class="col-md-3" ng-include="sidepath"></div>
+    <div class="col-md-9" ng-view></div>
+<!--</div>-->
 </body>
 </html>

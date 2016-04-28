@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="NewsApp">
+<head>
+    <!--<link rel="icon" href="../../favicon.ico">-->
+
+    <title>Index</title>
+
+    <meta charset="UTF-8">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="views/dashboard.css" rel="stylesheet">
+
+    <!--Jquery CDN-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!--Angular JS CDN-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.min.js"></script>
+    <!--Angular JS Routing CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-route.js"></script>
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular-route.min.js"></script>-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+
+    <link href="views/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- styles -->
+
+
+    <link href="views/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="views/css/datepicker3.css" rel="stylesheet">-->
+    <link href="views/css/styles.css" rel="stylesheet">
+
+    <!--Icons-->
+    <script src="views/js/lumino.glyphs.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="views/js/html5shiv.js"></script>
+    <script src="views/js/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="views/main/main.controller.js"></script>
+    <script src="views/sidebar/sidebar.controller.js"></script>
+    <script src="views/header/header.controller.js"></script>
+    <script src="services/user.service.client.js"></script>
+    <script src="services/news.service.client.js"></script>
+    <script src="views/users/login.controller.js"></script>
+    <script src="views/users/register.controller.js"></script>
+    <script src="views/users/profile.controller.js"></script>
+    <script src="views/admin/admin.controller.js"></script>
+    <script src="views/home/home.controller.js"></script>
+    <script src="views/single-article/single.controller.js"></script>
+    <script src="views/search/search.controller.js"></script>
+    <script src="views/world-news/worldnews.controller.js"></script>
+    <script src="views/sports/sports.controller.js"></script>
+    <script src="views/tech/technology.controller.js"></script>
+    <script src="views/business/business.controller.js"></script>
+    <script src="views/movies/movies.controller.js"></script>
+    <script src="views/books/books.controller.js"></script>
+    <script src="views/search-results/search-results.controller.js"></script>
+    <script src="views/liked-articles/like-article.controller.js"></script>
+    <script src="views/search-users/search-users.controller.js"></script>
+    <script src="views/messages/message.users.controller.js"></script>
+    <script src="views/users-following/users-following.controller.js"></script>
+
+
+    <script src="views/js/jquery-1.11.1.min.js"></script>
+    <script src="views/js/bootstrap.min.js"></script>
+
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    <!--<script src="services/video-search.search.client.js"></script>-->
+    <!--<script src="views/youtube/youtube.controller.js"></script>-->
+    <!--<script src="views/forms/forms.controller.js"></script>
+<!--<script src="views/forms/fields.controller.js"></script>-->
+    <!--<script src="services/forms.service.client.js"></script>-->
+    <!--<script src="services/field.service.client.js"></script>-->
+    <!--<script src="directives/jga-directives.js"></script>-->
+</head>
+<body ng-controller="MainController">
+
+<div ng-include="headerpath"></div>
+<div class="col-sm-3" ng-include="sidepath"></div>
+<div class="col-sm-9" ng-view></div>
+
+
+</body>
+</html>

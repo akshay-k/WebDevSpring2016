@@ -5,30 +5,32 @@
         .module("NewsApp")
         .controller("SidebarController", SidebarController);
 
-    function SidebarController($scope, $rootScope, $location, UserService) {
-        $scope.currentUser = $rootScope.user;
-        $scope.isAdmin = $rootScope.user != null && $rootScope.user.roles.indexOf('admin')>-1;
+    function SidebarController($location, NewsService, $window) {
 
-        //$rootScope.$watch("user", function(){
-        //    $scope.currentUser = $rootScope.user;
-        //    $scope.isAdmin = $rootScope.user != null && $rootScope.user.roles == "admin";
-        //})
+        var vm = this;
+
+        vm.search = search;
+
+        function init(){
+            vm.$location = $location;
+        }
+        init();
+
+        function search(article){
+            //var art = angular.toJson(article);
+            //NewsService
+            //    .setarticle(article)
+            //    .then(function () {;
+            //        $window.location.reload();
+            //        $location.url("/search/");
+            //    })
+
+            if(article == null){
+                alert("Enter a article");
+                return;
+            }
+
+            $location.url("/search/"+article);
+        }
     }
 })();
-    //    $scope.$location = $location;
-    //
-    //    $scope.logout = function(){
-    //        $scope.currentUser = null;
-    //        UserService.logout();
-    //        $scope.username= null;
-    //        $scope.password = null;
-    //    }
-    //
-    //    $scope.getCurrentUser = function(){
-    //        return UserService.getCurrentUser();
-    //    }
-    //
-    //     $scope.isAdmin = function(){
-    //        return UserService.getCurrentUser().roles=="admin";
-    //    }
-    //}

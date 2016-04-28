@@ -1,0 +1,47 @@
+<div class="row">
+    <br><br>
+    <div class="box">
+        <div class="content-wrap">
+            <iframe width="80%" height="500" frameborder="0" ng-src={{model.user}}></iframe>
+            <br><br>
+            <div class="glyphico">
+            <a href ng-click="model.likeArticle(currentUser)">
+                <i ng-show="currentUser" class="fa fa-thumbs-up"></i>
+            </a>
+        </div>
+        </div>
+    </div>
+
+    <h2>Comments</h2>
+    <ul class="comment-list">
+        <!--<h5 class="post-author_head">Written by <a href="#" title="Posts by admin" rel="author">admin</a>-->
+        <!--</h5>-->
+        <!--<li><img src="views/single-article/avatar.png" class="img-responsive" alt="">-->
+            <!--<div class="desc">-->
+                <!--<p>View all posts by: <a href="#" title="Posts by admin" rel="author">admin</a></p>-->
+            <!--</div>-->
+            <!--<div class="clearfix"></div>-->
+        <!--</li>-->
+
+        <li ng-repeat="news in model.comments">
+            <img src="views/single-article/avatar.png">
+            <b>Username</b> : {{news.username}} &nbsp;&nbsp;
+            <b>Email</b> : {{news.emails.toString()}}
+            <br><br><br>
+            <h4>Comment :</h4>  <h2>{{news.comments}}</h2>
+            <br><br>
+        </li>
+
+    </ul>
+
+    <div class="content-form" ng-show="currentUser">
+        <h3>Leave a comment</h3>
+        <form>
+            <input ng-model="currentUser.username" type="text" placeholder="Name" required/>
+            <input ng-model="currentUser.emails" type="text" placeholder="Email" required/>
+            <textarea ng-model="currentUser.comments" placeholder="Message"></textarea>
+            <input ng-click="model.createComment(currentUser)" class="btn btn-primary signup" type="submit" value="SEND"/>
+        </form>
+    </div>
+
+</div>

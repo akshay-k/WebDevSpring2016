@@ -5,21 +5,31 @@
         .module("NewsApp")
         .controller("ProfileController", ProfileController);
 
-    function ProfileController($scope, $rootScope, $location, UserService){
-        $scope.currentuser = angular.copy($rootScope.user);
-        //$rootScope.$watch("user", function(){
-        //    currentUser = $rootScope.user;
-        //})
-        //currentuser = $rootScope.user;
-        console.log($rootScope.user != null && $rootScope.user.roles.indexOf("admin") > -1);
+    function ProfileController(UserService){
 
-        $scope.updateUser = function(newuser) {
-            //newuser["_id"] = $scope.currentuser._id;
-            //newuser["roles"] = $scope.currentuser.roles;
+        var vm = this;
 
-            UserService.updateUser(newuser._id, newuser, function(updatedUser){
-                $rootScope.user = angular.copy(updatedUser);
-            })
+        vm.updateUser = updateUser;
+
+        function init(){
+            UserService
+                .getCurrentUser()
+                .then(function(response) {
+                    vm.newUser = response.data;
+                    vm.newUser['password'] = "";
+                })
+
+            //vm.updateUser = updateUser;
+        }
+        init();
+
+        function updateUser(user){
+            UserService
+                .updateUser(user._id, user)
+                .then(function (response) {
+                    var user = response.data;
+                    UserService.setCurrentUser(user);
+                });
         }
     }
 })();

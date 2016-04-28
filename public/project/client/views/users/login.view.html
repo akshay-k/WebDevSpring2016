@@ -9,7 +9,7 @@
                     <!--<label for="Username" class="col-sm-2 control-label">Username:</label>-->
                 <!--</td>-->
                 <!--<td width="261">-->
-                    <!--<input ng-model="username" type="text" name="Username" id="Username" class="form-control" placeholder="Username">-->
+                    <!--<input ng-model="model.username" type="text" name="Username" id="Username" class="form-control" placeholder="Username">-->
                 <!--</td>-->
               <!--</tr>-->
               <!--<tr>-->
@@ -21,7 +21,7 @@
                     <!--<label for="Password" class="col-sm-2 control-label">Password:</label>-->
                 <!--</td>-->
                 <!--<td>-->
-                    <!--<input ng-model="password" type="password" name="Password" id="Password" class="form-control" placeholder="Password">-->
+                    <!--<input ng-model="model.password" type="password" name="Password" id="Password" class="form-control" placeholder="Password">-->
                 <!--</td>-->
               <!--</tr>-->
               <!--<tr>-->
@@ -31,7 +31,7 @@
               <!--<tr>-->
                 <!--<td>&nbsp;</td>-->
                 <!--<td>-->
-                    <!--<input ng-click="login()" type="submit" class="btn btn-success" value="Login"/>-->
+                    <!--<input ng-click="model.login()" type="submit" class="btn btn-success" value="Login"/>-->
                 <!--</td>-->
               <!--</tr>-->
             <!--</table>-->
@@ -44,37 +44,41 @@
 
 <div class="page-content container">
     <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <div class="login-wrapper">
-                <div class="box">
-                    <div class="content-wrap">
-                        <h6>Sign In</h6>
-                        <div class="social">
-                            <a class="face_login" href="#">
+        <form method="post">
+            <div class="col-md-4 col-md-offset-2">
+                <br><br>
+                <div class="login-wrapper">
+                    <div class="box">
+                        <div class="content-wrap">
+                            <h6>Sign In</h6>
+                            <div class="social">
+                                <a class="face_login" href="/auth/facebook">
 	                                <span class="face_icon">
-	                                    <img src="images/facebook.png" alt="fb">
+	                                    <img src="views/images/facebook.png" alt="fb">
 	                                </span>
-                                <span class="text">Sign in with Facebook</span>
-                            </a>
-                            <div class="division">
-                                <hr class="left">
-                                <span>or</span>
-                                <hr class="right">
+                                    <span class="text">Sign in with Facebook</span>
+                                </a>
+                                <div class="division">
+                                    <hr class="left">
+                                    <span>or</span>
+                                    <hr class="right">
+                                </div>
+                            </div>
+                            <input ng-model="model.username" class="form-control" type="text" placeholder="Username" required>
+                            <input ng-model="model.password" class="form-control" type="password" placeholder="Password" required>
+                            <div class="action">
+                                <!--<a class="btn btn-primary signup" href="index.html">Login</a>-->
+                                <input ng-click="model.login()" type="submit" class="btn btn-primary signup" value="Login"/>
                             </div>
                         </div>
-                        <input class="form-control" type="text" placeholder="E-mail address">
-                        <input class="form-control" type="password" placeholder="Password">
-                        <div class="action">
-                            <a class="btn btn-primary signup" href="index.html">Login</a>
-                        </div>
+                    </div>
+
+                    <div class="already">
+                        <p>Don't have an account yet?</p>
+                        <a href="#/register">Sign Up</a>
                     </div>
                 </div>
-
-                <div class="already">
-                    <p>Don't have an account yet?</p>
-                    <a href="signup.html">Sign Up</a>
-                </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>

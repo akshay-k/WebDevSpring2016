@@ -1,58 +1,241 @@
-﻿<!--<div class="container" ng-controller="SidebarController">-->
-    <!--<div class="col-sm-3 col-md-2 sidebar">-->
-    <!--<ul class="nav nav-sidebar">-->
-        <!--<li ng-class="{active: $location.url()=='/home'}">-->
-            <!--<a ng-class="{disabled: $location.url()=='/home'}" href="#/home">-->
-                <!--Home-->
-            <!--</a>-->
-        <!--</li>-->
-        <!--<li ng-class="{active: $location.url()=='/profile'}">-->
-            <!--<a ng-class="{disabled: $location.url()=='/profile'}" ng-show="user" href="#/profile">-->
-                <!--Profile-->
-            <!--</a>-->
-        <!--</li>-->
-        <!--<li ng-class="{active: $location.url()=='/admin'}">-->
-            <!--<a ng-class="{disabled: $location.url()=='/admin'}" ng-show="user && user.roles.indexOf('admin')>-1" href="#/admin">-->
-                <!--Admin-->
-            <!--</a>-->
-        <!--</li>-->
-        <!--&lt;!&ndash;<li ng-class="{active: $location.url()=='/forms'}">&ndash;&gt;-->
-            <!--&lt;!&ndash;<a ng-class="{disabled: $location.url()=='/forms'}" ng-show="user" href="#/forms">&ndash;&gt;-->
-                <!--&lt;!&ndash;Forms&ndash;&gt;-->
-            <!--&lt;!&ndash;</a>&ndash;&gt;-->
-        <!--&lt;!&ndash;</li>&ndash;&gt;-->
-        <!--<li ng-class="{active: $location.url()=='/search'}">-->
-            <!--<a ng-class="{disabled: $location.url()=='/search'}" ng-show="user" href="#/search">-->
-                <!--Search-->
-            <!--</a>-->
-        <!--</li>-->
-    <!--</ul>-->
+﻿<!--<div class="col-md-3" ng-controller="SidebarController as model">-->
+<!--<div class="sidebar content-box" style="display: block;">-->
+<!--<ul class="nav">-->
+<!--&lt;!&ndash; Main menu &ndash;&gt;-->
+<!--<li ng-class="{active: model.$location.url()=='/home'}">-->
+<!--<a ng-class="{disabled: model.$location.url()=='/home'}" href="#/home">-->
+<!--<i class="glyphicon glyphicon-home"></i>-->
+<!--Home-->
+<!--</a>-->
+<!--</li>-->
+<!--&lt;!&ndash;<li ng-class="{active: model.$location.url()=='/profile'}">&ndash;&gt;-->
+<!--&lt;!&ndash;<a ng-class="{disabled: model.$location.url()=='/profile'}" ng-show="currentUser" href="#profile">&ndash;&gt;-->
+<!--&lt;!&ndash;<i class="glyphicon glyphicon-user"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;Profile&ndash;&gt;-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--<li ng-class="{active: model.$location.url()=='/likedarticles'}">-->
+<!--<a ng-class="{disabled: model.$location.url()=='/likedarticles'}" ng-show="currentUser" href="#likedarticles">-->
+<!--<i class="glyphicon glyphicon-list-alt"></i>-->
+<!--Liked News Articles-->
+<!--</a>-->
+<!--</li>-->
+<!--<li ng-class="{active: model.$location.url()=='/likedvideos'}">-->
+<!--<a ng-class="{disabled: model.$location.url()=='/likedvideos'}" ng-show="currentUser" href="#likedvideos">-->
+<!--<i class="glyphicon glyphicon-film"></i>-->
+<!--Liked Video Articles-->
+<!--</a>-->
+<!--</li>-->
+<!--<li ng-class="{active: model.$location.url()=='/usersfollowing'}">-->
+<!--<a ng-class="{disabled: model.$location.url()=='usersfollowing'}" ng-show="currentUser" href="#usersfollowing">-->
+<!--<i class="glyphicon glyphicon-list"></i>-->
+<!--Users Following-->
+<!--</a>-->
+<!--</li>-->
+
+<!--<li ng-class="{active: model.$location.url()=='/worldnews'}">-->
+<!--<a ng-class="{disabled: model.$location.url()=='/worldnews'}" href="#/worldnews">-->
+<!--<i class="fa fa-newspaper-o"></i>-->
+<!--World News-->
+<!--</a>-->
+<!--</li>-->
+
+<!--<li ng-class="{active: model.$location.url()=='/sports'}">-->
+<!--<a ng-class="{disabled: model.$location.url()=='/sports'}" href="#/sports">-->
+<!--&lt;!&ndash;<i class="glyphicon glyphicon-home"></i>&ndash;&gt;-->
+<!--<i class="fa fa-futbol-o"></i>-->
+<!--Sports-->
+<!--</a>-->
+<!--</li>-->
+
+<!--<li ng-class="{active: model.$location.url()=='/tech'}">-->
+<!--<a ng-class="{disabled: model.$location.url()=='/tech'}" href="#/tech">-->
+<!--&lt;!&ndash;<i class="glyphicon glyphicon-home"></i>&ndash;&gt;-->
+<!--<i class="fi-laptop"></i>-->
+<!--Tech-->
+<!--</a>-->
+<!--</li>-->
+
+<!--<li ng-class="{active: model.$location.url()=='/business'}">-->
+<!--<a ng-class="{disabled: model.$location.url()=='/business'}" href="#/business">-->
+<!--&lt;!&ndash;<i class="glyphicon glyphicon-home"></i>&ndash;&gt;-->
+<!--<i class="fa fa-suitcase"></i>-->
+<!--Business-->
+<!--</a>-->
+<!--</li>-->
+
+<!--<li ng-class="{active: model.$location.url()=='/Movies'}">-->
+<!--<a ng-class="{disabled: model.$location.url()=='/movies'}" href="#/movies">-->
+<!--&lt;!&ndash;<i class="glyphicon glyphicon-home"></i>&ndash;&gt;-->
+<!--<i class="material-icons"></i>-->
+<!--Movies-->
+<!--</a>-->
+<!--</li>-->
+
+<!--<li ng-class="{active: model.$location.url()=='/books'}">-->
+<!--<a ng-class="{disabled: model.$location.url()=='/books'}" href="#/books">-->
+<!--&lt;!&ndash;<i class="glyphicon glyphicon-home"></i>&ndash;&gt;-->
+<!--<i class="glyphicon glyphicon-book"></i>-->
+<!--Books-->
+<!--</a>-->
+<!--</li>-->
+<!--&lt;!&ndash;<li><a href="buttons.html"><i class="glyphicon glyphicon-record"></i> Buttons</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li><a href="editors.html"><i class="glyphicon glyphicon-pencil"></i> Editors</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li><a href="forms.html"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li class="submenu">&ndash;&gt;-->
+<!--&lt;!&ndash;<a href="#">&ndash;&gt;-->
+<!--&lt;!&ndash;<i class="glyphicon glyphicon-list"></i> Pages&ndash;&gt;-->
+<!--&lt;!&ndash;<span class="caret pull-right"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;</a>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash; Sub menu &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<ul>&ndash;&gt;-->
+<!--&lt;!&ndash;<li><a href="login.html">Login</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;<li><a href="signup.html">Signup</a></li>&ndash;&gt;-->
+<!--&lt;!&ndash;</ul>&ndash;&gt;-->
+<!--&lt;!&ndash;</li>&ndash;&gt;-->
+<!--</ul>-->
 <!--</div>-->
 <!--</div>-->
 
 
-<div class="col-md-2">
-    <div class="sidebar content-box" style="display: block;">
-        <ul class="nav">
-            <!-- Main menu -->
-            <li class="current"><a href="#home"><i class="glyphicon glyphicon-home"></i> Home</a></li>
-            <li><a href="calendar.html"><i class="glyphicon glyphicon-calendar"></i> Liked News Articles</a></li>
-            <li><a href="stats.html"><i class="glyphicon glyphicon-stats"></i> Liked Video Articles</a></li>
-            <li><a href="tables.html"><i class="glyphicon glyphicon-list"></i> Users Following</a></li>
-            <!--<li><a href="buttons.html"><i class="glyphicon glyphicon-record"></i> Buttons</a></li>-->
-            <!--<li><a href="editors.html"><i class="glyphicon glyphicon-pencil"></i> Editors</a></li>-->
-            <!--<li><a href="forms.html"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>-->
-            <!--<li class="submenu">-->
-            <!--<a href="#">-->
-            <!--<i class="glyphicon glyphicon-list"></i> Pages-->
-            <!--<span class="caret pull-right"></span>-->
+<div class="sidebar" ng-controller="SidebarController as model">
+    <form role="search">
+        <div class="form-group">
+            <input ng-model="article" type="text" class="form-control" placeholder="Search" required>
+            <br>
+            <button ng-click="model.search(article)" class="btn btn-primary btn-block" type="button">Search</button>
+        </div>
+    </form>
+    <ul class="nav menu">
+
+        <li ng-class="{active: model.$location.url()=='/admin'}">
+            <a ng-class="{disabled: model.$location.url()=='/admin'}" ng-show="currentUser && currentUser.roles.indexOf('admin')>-1" href="#/admin">
+                <i class="fa fa-adn"></i>
+                Admin
+            </a>
+        </li>
+
+        <li ng-class="{active: model.$location.url()=='/liked-articles'}">
+            <a ng-class="{disabled: model.$location.url()=='/liked-articles'}" ng-show="currentUser" href="#/liked-articles">
+                <i class="glyphicon glyphicon-list-alt"></i>
+                Liked News Articles
+            </a>
+        </li>
+
+        <!--<li ng-class="{active: model.$location.url()=='/messages'}">-->
+            <!--<a ng-class="{disabled: model.$location.url()=='/messages'}" ng-show="currentUser" href="#/messages">-->
+                <!--<i class="fa fa-envelope"></i>-->
+                <!--Messages-->
             <!--</a>-->
-            <!--&lt;!&ndash; Sub menu &ndash;&gt;-->
-            <!--<ul>-->
-            <!--<li><a href="login.html">Login</a></li>-->
-            <!--<li><a href="signup.html">Signup</a></li>-->
-            <!--</ul>-->
-            <!--</li>-->
-        </ul>
-    </div>
-</div>
+        <!--</li>-->
+
+        <li ng-class="{active: model.$location.url()=='/search-users'}">
+            <a ng-class="{disabled: model.$location.url()=='search-users'}" ng-show="currentUser" href="#/search-users">
+                <i class="fa fa-user-secret"></i>
+                Search User
+            </a>
+        </li>
+
+        <li ng-class="{active: model.$location.url()=='/users-following'}">
+            <a ng-class="{disabled: model.$location.url()=='users-following'}" ng-show="currentUser" href="#/users-following">
+                <i class="fa fa-users"></i>
+                Users Following
+            </a>
+        </li>
+
+        <li ng-class="{active: model.$location.url()=='/home'}">
+            <a ng-class="{disabled: model.$location.url()=='/home'}" href="#/home">
+                <i class="fa fa-newspaper-o"></i>
+                News Headlines
+            </a>
+        </li>
+
+        <li ng-class="{active: model.$location.url()=='/worldnews'}">
+            <a ng-class="{disabled: model.$location.url()=='/worldnews'}" href="#/worldnews">
+                <i class="fa fa-globe"></i>
+                World News
+            </a>
+        </li>
+
+        <li ng-class="{active: model.$location.url()=='/sports'}">
+            <a ng-class="{disabled: model.$location.url()=='/sports'}" href="#/sports">
+                <!--<i class="glyphicon glyphicon-home"></i>-->
+                <i class="fa fa-futbol-o"></i>
+                Sports
+            </a>
+        </li>
+
+        <li ng-class="{active: model.$location.url()=='/tech'}">
+            <a ng-class="{disabled: model.$location.url()=='/tech'}" href="#/tech">
+                <!--<i class="glyphicon glyphicon-home"></i>-->
+                <i class="fa fa-laptop"></i>
+                Tech
+            </a>
+        </li>
+
+        <li ng-class="{active: model.$location.url()=='/business'}">
+            <a ng-class="{disabled: model.$location.url()=='/business'}" href="#/business">
+                <!--<i class="glyphicon glyphicon-home"></i>-->
+                <i class="fa fa-suitcase"></i>
+                Business
+            </a>
+        </li>
+
+        <li ng-class="{active: model.$location.url()=='/Movies'}">
+            <a ng-class="{disabled: model.$location.url()=='/movies'}" href="#/movies">
+                <!--<i class="glyphicon glyphicon-home"></i>-->
+                <i class="fa fa-ticket"></i>
+                Movies
+            </a>
+        </li>
+
+        <li ng-class="{active: model.$location.url()=='/books'}">
+            <a ng-class="{disabled: model.$location.url()=='/books'}" href="#/books">
+                <!--<i class="glyphicon glyphicon-home"></i>-->
+                <i class="glyphicon glyphicon-book"></i>
+                Books
+            </a>
+        </li>
+
+        <li ng-class="{active: model.$location.url()=='/youtube'}">
+            <a ng-class="{disabled: model.$location.url()=='/youtube'}" href="#/youtube">
+                <!--<i class="glyphicon glyphicon-home"></i>-->
+                <i class="fa fa-youtube"></i>
+                Youtube
+            </a>
+        </li>
+
+
+        <!--<li><a href="widgets.html"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Widgets</a></li>-->
+        <!--<li><a href="charts.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Charts</a></li>-->
+        <!--<li><a href="tables.html"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Tables</a></li>-->
+        <!--<li><a href="forms.html"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Forms</a></li>-->
+        <!--<li><a href="panels.html"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Alerts &amp; Panels</a></li>-->
+        <!--<li><a href="icons.html"><svg class="glyph stroked star"><use xlink:href="#stroked-star"></use></svg> Icons</a></li>-->
+        <!--<li class="parent ">-->
+        <!--<a href="#">-->
+        <!--<span data-toggle="collapse" href="#sub-item-1"><svg class="glyph stroked chevron-down"><use xlink:href="#stroked-chevron-down"></use></svg></span> Dropdown-->
+        <!--</a>-->
+        <!--<ul class="children collapse" id="sub-item-1">-->
+        <!--<li>-->
+        <!--<a class="" href="#">-->
+        <!--<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 1-->
+        <!--</a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<a class="" href="#">-->
+        <!--<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 2-->
+        <!--</a>-->
+        <!--</li>-->
+        <!--<li>-->
+        <!--<a class="" href="#">-->
+        <!--<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Sub Item 3-->
+        <!--</a>-->
+        <!--</li>-->
+        <!--</ul>-->
+        <!--</li>-->
+        <!--<li role="presentation" class="divider"></li>-->
+        <!--<li><a href="login.html"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Login Page</a></li>-->
+    </ul>
+
+</div><!--/.sidebar-->

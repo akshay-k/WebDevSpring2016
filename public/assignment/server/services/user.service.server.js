@@ -20,9 +20,9 @@ module.exports = function(app, userModel) {
     app.put("/api/assignment/admin/user/:id", auth, adminupdate);
     app.delete("/api/assignment/admin/user/:id", auth, deleteuserbyid);
 
-    passport.use('FormBuilderApp', new LocalStrategy(localStrategy));
-    passport.serializeUser(serializeUser);
-    passport.deserializeUser(deserializeUser);
+    passport.use('FormBuilderApp', new LocalStrategy(assignmentlocalStrategy));
+    //passport.serializeUser(serializeUser);
+    //passport.deserializeUser(deserializeUser);
 
     //function localStrategy(username, password, done){
     //    userModel
@@ -38,7 +38,7 @@ module.exports = function(app, userModel) {
     //        );
     //}
 
-    function localStrategy(username, password, done){
+    function assignmentlocalStrategy(username, password, done){
         userModel
             .findUserByUsername(username)
             .then(
@@ -67,24 +67,24 @@ module.exports = function(app, userModel) {
         res.json(user);
     }
 
-    function serializeUser(user, done){
-        delete user.password;
-        done(null, user);
-    }
-
-    function deserializeUser(user, done){
-        userModel
-            .findUserByUserId(user._id)
-            .then(
-                function (user) {
-                    delete user.password;
-                    done(null, user);
-                },
-                function (err) {
-                    done(err, null);
-                }
-            );
-    }
+    //function serializeUser(user, done){
+    //    delete user.password;
+    //    done(null, user);
+    //}
+    //
+    //function deserializeUser(user, done){
+    //    userModel
+    //        .findUserByUserId(user._id)
+    //        .then(
+    //            function (user) {
+    //                delete user.password;
+    //                done(null, user);
+    //            },
+    //            function (err) {
+    //                done(err, null);
+    //            }
+    //        );
+    //}
 
     function authorized(req, res, next){
         if(!req.isAuthenticated()){

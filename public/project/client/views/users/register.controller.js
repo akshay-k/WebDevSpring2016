@@ -5,21 +5,34 @@
         .module("NewsApp")
         .controller("RegisterController", RegisterController);
 
-    function RegisterController($scope, $rootScope, $location, UserService){
+    function RegisterController($location, UserService){
 
-        $scope.createUser = function() {
-            var verifypassword = $scope.currentuser.verifypassword;
-            if ($scope.currentuser.password != verifypassword) {
-                alert("Passwords dont match!");
+        var vm = this;
+
+        vm.createUser = createUser;
+
+        function init(){
+            vm.$location = $location;
+        }
+        init();
+
+        function createUser(user){
+            if( user.password == null || user.verifypassword == null ||user.password != user.verifypassword){
+                alert("Password don't match");
                 return;
             }
-            $scope.currentuser["firstName"] = null;
-            $scope.currentuser["lastName"] = null;
-            $scope.currentuser["roles"] = [];
-            UserService.createUser($scope.currentuser, function(newUser) {
-                $rootScope.user = newUser;
-                $location.path("/profile");
-            });
+            UserService
+                .createUser(user)
+                .then(function (response) {
+                    var currentUser = response.data;
+                    if(currentUser != null){
+                        UserService.setCurrentUser(response.data);
+                        $location.url("/profile");
+                    }
+                    else{
+                        alert("Username already present");
+                    }
+                });
         }
     }
 })();
