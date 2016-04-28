@@ -20,7 +20,8 @@ module.exports = function(db, mongoose){
         findUserLikeName: findUserLikeName,
         follow: follow,
         unfollow: unfollow,
-        findUsersByUsernames: findUsersByUsernames
+        findUsersByUsernames: findUsersByUsernames,
+        findUserByGoogleId: findUserByGoogleId
     };
     return api;
 
@@ -89,6 +90,10 @@ module.exports = function(db, mongoose){
 
     function findUserByFacebookId(facebookId) {
         return UserModel.findOne({'facebook.id': facebookId});
+    }
+
+    function findUserByGoogleId(googleId) {
+        return UserModel.findOne({'google.id': googleId});
     }
 
     function findUserLikeName(fname) {

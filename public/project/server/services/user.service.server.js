@@ -2,6 +2,7 @@
 
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var GoogleStrategy   = require('passport-google-oauth').OAuth2Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var bcrypt = require("bcrypt-nodejs");
 
@@ -34,6 +35,19 @@ module.exports = function(app, userModel) {
             failureRedirect: '/project/client/#/login'
         }));
 
+    app.get   ('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
+    app.get   ('/auth/google/callback',
+        passport.authenticate('google', {
+            successRedirect: '/project/client/#/profile',
+            failureRedirect: '/project/client/#/login'
+        }));
+
+    var googleConfig = {
+        clientID        : process.env.GOOGLE_CLIENT_ID,
+        clientSecret    : process.env.GOOGLE_CLIENT_SECRET,
+        callbackURL     : process.env.GOOGLE_CALLBACK_URL
+    };
+
     var facebookConfig = {
         clientID        : process.env.FACEBOOK_CLIENT_ID,
         clientSecret    : process.env.FACEBOOK_CLIENT_SECRET,
@@ -41,6 +55,7 @@ module.exports = function(app, userModel) {
     };
 
     passport.use('facebook', new FacebookStrategy(facebookConfig, facebookStrategy));
+    passport.use('google', new GoogleStrategy(googleConfig, googleStrategy));
     passport.use('NewsApp', new LocalStrategy(projectlocalStrategy));
     //passport.serializeUser(serializeUser);
     //passport.deserializeUser(deserializeUser);
@@ -68,6 +83,41 @@ module.exports = function(app, userModel) {
                             }
                         };
                         return userModel.createUser(newFacebookUser);
+                    }
+                },
+                function(err) {
+                    if (err) { return done(err); }
+                }
+            )
+            .then(
+                function(user){
+                    return done(null, user);
+                },
+                function(err){
+                    if (err) { return done(err); }
+                }
+            );
+    }
+
+    function googleStrategy(token, refreshToken, profile, done) {
+        userModel
+            .findUserByGoogleId(profile.id)
+            .then(
+                function(user) {
+                    if(user) {
+                        return done(null, user);
+                    } else {
+                        var newGoogleUser = {
+                            lastName: profile.name.familyName,
+                            firstName: profile.name.givenName,
+                            usertype: "projectuser",
+                            email: profile.emails[0].value,
+                            google: {
+                                id:          profile.id,
+                                token:       token
+                            }
+                        };
+                        return userModel.createUser(newGoogleUser);
                     }
                 },
                 function(err) {
