@@ -143,6 +143,13 @@
             </a>
         </li>
 
+        <li ng-class="{active: model.$location.url()=='/users-followers'}">
+            <a ng-class="{disabled: model.$location.url()=='users-followers'}" ng-show="currentUser" href="#/users-followers">
+                <i class="fa fa-users"></i>
+                User Followers
+            </a>
+        </li>
+
         <li ng-class="{active: model.$location.url()=='/home'}">
             <a ng-class="{disabled: model.$location.url()=='/home'}" href="#/home">
                 <i class="fa fa-newspaper-o"></i>

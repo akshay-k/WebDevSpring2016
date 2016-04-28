@@ -105,6 +105,12 @@
                     controllerAs: "model",
                     resolve:{ loggedin: checkloggedin}
                 })
+                .when("/users-followers", {
+                    templateUrl: "views/users-following/users-followers.view.html",
+                    controller: "UsersFollowingController",
+                    controllerAs: "model",
+                    resolve:{ loggedin: checkloggedin}
+                })
                 .when("/messages", {
                     templateUrl: "views/messages/message-users.view.html",
                     controller: "MessageController",
