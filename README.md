@@ -44,3 +44,6 @@ A portal to view the news across the globe. View all the latest trending news [h
 
 
 You can jump in right to the [website](http://webdevelopment-kulkarniakshay.rhcloud.com/project/client/home.html#/ "NewsPortal")
+
+Note: For security reasons Openshift does not allow Iframes. This project makes extensive use of Iframes. Please install "Ignore X-Frame Headers" plugin for chrome.
+      This way all the Iframes are loaded properly.
