@@ -40,6 +40,9 @@
 
         function showRecentNews() {
             return $http.get("http://api.nytimes.com/svc/news/v3/content/all/all/1.json?api-key=d5294ac0221560f8eaf177d9e1029a57:5:74405850");
+
+            ///return $http.get("http://api.nytimes.com/svc/news/v3/content/all/all/1.json?api-key="+apikey);
+            //process.env.API_KEY
         }
 
         function showWorldNews(){
