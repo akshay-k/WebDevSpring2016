@@ -1,5 +1,5 @@
 # [NewsPortal] (http://webdevelopment-kulkarniakshay.rhcloud.com/project/client/home.html#/ "NewsPortal")
-#(Cloud tier has been disabled by Apache. Download the code and run it locally)
+# (Cloud tier has been disabled by Apache. Download the code and run it locally)
 
 A portal to view the news across the globe. View all the latest trending news [here](http://webdevelopment-kulkarniakshay.rhcloud.com/project/client/home.html#/ "NewsPortal")
 
